@@ -7,7 +7,7 @@
     "react": "^16.2.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "webpack": "^4.2.0"
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
