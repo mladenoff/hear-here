@@ -1,16 +1,15 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
 
-class Main extends React.Component {
+class Setlist extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      
+      <div></div>
     );
   }
 }
 
-export default Main;
+export default Setlist;
