@@ -3,6 +3,11 @@ const path = require('path');
 module.exports = {
   context: __dirname,
   entry: './components/tester.jsx',
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   output: {
     path: path.resolve(__dirname, 'public', 'js'),
     filename: 'bundle.js',

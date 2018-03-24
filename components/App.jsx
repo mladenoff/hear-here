@@ -47,12 +47,13 @@ export default class App extends React.Component {
         console.log('Subscriber video disabled');
       },
     };
+    
     this.onSessionError = this.onSessionError.bind(this);
     this.onPublish = this.onPublish.bind(this);
     this.onPublishError = this.onPublishError.bind(this);
     this.onSubscribe = this.onSubscribe.bind(this);
     this.onSubscribeError = this.onSubscribeError.bind(this);
-    this.togglethis.toggleVideo.bind(this);
+    this.toggleVideo = this.toggleVideo.bind(this);
   }
 
   onSessionError (error) {
