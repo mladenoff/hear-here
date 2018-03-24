@@ -1,147 +1,38 @@
 
-// (optional) add server code here
-// Handling all of our errors here by alerting them
-// function handleError(error) {
-//   if (error) {
-//     alert(error.message);
-//   }
-// }
-//
-// function initializeSession() {
-//   const session = OT.initSession(apiKey, sessionId);
-//
-//   // Subscribe to a newly created stream
-//
-//   // Create a publisher
-//   const publisher = OT.initPublisher('publisher', {
-//     insertMode: 'append',
-//     width: '100%',
-//     height: '100%'
-//   }, handleError);
-//
-//   // Connect to the session
-//   session.connect(token, function(error) {
-//     // If the connection is successful, publish to the session
-//     if (error) {
-//       handleError(error);
-//     } else {
-//       session.publish(publisher, handleError);
-//     }
-//   });
-// }
-
-
 import React from 'react';
-import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
+import ReactDOM from 'react-dom';
+import '@opentok/client';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+import App from './App';
+import './index.css';
+import './polyfills';
 
-    this.state = {
-      error: null,
-      connection: 'Connecting',
-      publishVideo: true,
-    };
+import {
+  SAMPLE_SERVER_BASE_URL,
+  API_KEY,
+  SESSION_ID,
+  TOKEN
+} from './config';
 
-    this.sessionEventHandlers = {
-      sessionConnected: () => {
-        this.setState({ connection: 'Connected' });
-      },
-      sessionDisconnected: () => {
-        this.setState({ connection: 'Disconnected' });
-      },
-      sessionReconnected: () => {
-        this.setState({ connection: 'Reconnected' });
-      },
-      sessionReconnecting: () => {
-        this.setState({ connection: 'Reconnecting' });
-      },
-    };
+function renderApp(credentials) {
+  ReactDOM.render(
+    <App credentials={credentials} />,
+    document.getElementById('root')
+  );
+}
 
-    this.publisherEventHandlers = {
-      accessDenied: () => {
-        console.log('User denied access to media source');
-      },
-      streamCreated: () => {
-        console.log('Publisher stream created');
-      },
-      streamDestroyed: ({ reason }) => {
-        console.log(`Publisher stream destroyed because: ${reason}`);
-      },
-    };
-
-    this.subscriberEventHandlers = {
-      videoEnabled: () => {
-        console.log('Subscriber video enabled');
-      },
-      videoDisabled: () => {
-        console.log('Subscriber video disabled');
-      },
-    };
-  }
-
-  onSessionError = error => {
-    this.setState({ error });
-  };
-
-  onPublish = () => {
-    console.log('Publish Success');
-  };
-
-  onPublishError = error => {
-    this.setState({ error });
-  };
-
-  onSubscribe = () => {
-    console.log('Subscribe Success');
-  };
-
-  onSubscribeError = error => {
-    this.setState({ error });
-  };
-
-  toggleVideo = () => {
-    this.setState({ publishVideo: !this.state.publishVideo });
-  };
-
-  render() {
-    const { apiKey, sessionId, token } = this.props.credentials;
-    const { error, connection, publishVideo } = this.state;
-    return (
-      <div>
-        <div id="sessionStatus">Session Status: {connection}</div>
-        {error ? (
-          <div className="error">
-            <strong>Error:</strong> {error}
-          </div>
-        ) : null}
-        <OTSession
-          apiKey={apiKey}
-          sessionId={sessionId}
-          token={token}
-          onError={this.onSessionError}
-          eventHandlers={this.sessionEventHandlers}
-        >
-          <button id="videoButton" onClick={this.toggleVideo}>
-            {publishVideo ? 'Disable' : 'Enable'} Video
-          </button>
-          <OTPublisher
-            properties={{ publishVideo, width: 50, height: 50, }}
-            onPublish={this.onPublish}
-            onError={this.onPublishError}
-            eventHandlers={this.publisherEventHandlers}
-          />
-          <OTStreams>
-            <OTSubscriber
-              properties={{ width: 100, height: 100 }}
-              onSubscribe={this.onSubscribe}
-              onError={this.onSubscribeError}
-              eventHandlers={this.subscriberEventHandlers}
-            />
-          </OTStreams>
-        </OTSession>
-      </div>
-    );
-  }
+if (API_KEY && TOKEN && SESSION_ID) {
+  renderApp({
+    apiKey: API_KEY,
+    sessionId: SESSION_ID,
+    token: TOKEN,
+  });
+} else {
+  fetch(SAMPLE_SERVER_BASE_URL + '/session')
+    .then(data => data.json())
+    .then(renderApp)
+    .catch((err) => {
+      console.error('Failed to get session credentials', err);
+      alert('Failed to get opentok sessionId and token. Make sure you have updated the config.js file.');
+    });
 }
