@@ -1,9 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Switch, Route, Link } from 'react-router-dom';
-import UserTabsContainer from './tabs/UserTabsContainer';
-import ManageTabsContainer from './tabs/ManageTabsContainer';
-import BackButton from '../shared/BackButton';
+import { Switch, Route } from 'react-router-dom';
+import UserTabsContainer from './Tabs/UserTabsContainer';
+import ManageTabsContainer from './Tabs/ManageTabsContainer';
+import LeftNav from './LeftNav';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Nav extends React.Component {
     clearTimeout(this.timeout);
 
     this.setState({ query: e.target.value }, () => {
-      this.props.history.push(`/search?query=${this.state.query}`);
+      this.props.history.replace(`/search?query=${this.state.query}`);
 
       this.timeout = setTimeout(() => {
         // API Call here
@@ -36,19 +36,7 @@ class Nav extends React.Component {
     return (
       <header>
         <section className="upper-nav">
-          <div className="upper-left-nav-container">
-            <Switch>
-              <Route
-                path="/search"
-                component={BackButton} />
-              <Link to="/live" >
-                <img
-                  className="logo"
-                  src="./assets/music.png"
-                  alt="music logo" />
-              </Link>
-            </Switch>
-          </div>
+          <LeftNav />
           <input
             type="text"
             onChange={this.handleChange}
