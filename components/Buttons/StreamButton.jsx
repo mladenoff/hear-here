@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createOTSession } from '../../actions/otSessionActions';
 
-const Dashboard = props => (
+const StreamButton = props => (
   <button
+    className='stream-now-button'
     onClick={() => props.createSession()}
-    >Start Streaming
+  >
+    Start Streaming
   </button>
 )
 
@@ -13,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   createSession: () => dispatch(createOTSession())
 })
 
-export default connect(null, mapDispatchToProps)(Dashboard);
+export default connect(null, mapDispatchToProps)(StreamButton);

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import SetlistIndex from './SetlistIndex';
+import SetlistIndex from '../Setlist/SetlistIndex';
 import { fetchSetlists, setAsPlaying } from '../../actions/setlistActions';
 import { fetchBands } from '../../actions/bandActions';
 import { upcomingSelector } from '../../reducers/selectors';

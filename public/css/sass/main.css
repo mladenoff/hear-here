@@ -121,4 +121,56 @@ header {
   .tabs #selected {
     border-bottom: 2.5px solid #b790be; }
 
+.stream-portal {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-shadow: 0 0 10px 2px #939393 inset; }
+
+.setlist-container {
+  width: 40%;
+  height: 100%;
+  background: #D1D1D1; }
+
+.song-item {
+  border-top: 1px solid #b790be;
+  border-bottom: 1px solid #b790be;
+  opacity: 60%; }
+
+.song-active {
+  opacity: 95%; }
+
+.publisher-window {
+  width: 100%;
+  height: 100%; }
+
+.stream-now-button {
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4a2f83;
+  width: 200px;
+  height: 60px;
+  padding: 7px 20px;
+  /* background: linear-gradient(#4a2f83, #b790be); */
+  background-color: white;
+  border: 1px solid;
+  /* box-shadow: inset 0 1px 1px #b790be; */
+  border-color: #9b95b2;
+  text-align: center;
+  font-family: sans-serif;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); */
+  cursor: pointer; }
+
+.stream-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center; }
+
 /*# sourceMappingURL=main.css.map */

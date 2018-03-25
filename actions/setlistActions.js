@@ -4,6 +4,11 @@ export const RECEIVE_SETLIST = 'RECEIVE_SETLIST';
 export const RECEIVE_SETLISTS = 'RECEIVE_SETLISTS';
 export const SET_AS_PLAYING = 'SET_AS_PLAYING';
 export const SET_NOT_PLAYING = 'SET_NOT_PLAYING';
+export const START_FETCHING_SETLISTS = 'START_FETCHING_SETLISTS';
+
+export const startFetchingSetlists = () => ({
+  type: START_FETCHING_SETLISTS,
+});
 
 export const receiveSetlist = nestedSetlist => ({
   type: RECEIVE_SETLIST,
@@ -26,10 +31,12 @@ export const setNotPlaying = setlistId => ({
   setlistId,
 });
 
-export const fetchSetlist = setlistId => (dispatch) => {
-  return APIUtil.fetchSetlist(setlistId).then(
-    nestedSetlist => dispatch(receiveSetlist(nestedSetlist)),
-  );
+export const fetchSetlist = setlistId => dispatch => {
+  dispatch(startFetchingSetlists());
+  return APIUtil.fetchSetlist(setlistId).then(nestedSetlist => {
+    debugger
+    dispatch(receiveSetlist(nestedSetlist));
+  });
 };
 
 export const fetchSetlists = () => (dispatch) => {

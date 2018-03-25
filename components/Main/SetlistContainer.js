@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import Setlist from './Setlist';
 
@@ -19,4 +20,4 @@ const mapStateToProps = state => ({
   setlists: nowPlayingSelector(state.setlists),
 });
 
-export default connect(mapStateToProps)(Setlist);
+export default withRouter(connect(mapStateToProps)(Setlist));

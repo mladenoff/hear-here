@@ -1,18 +1,32 @@
-import _ from 'lodash';
+import { merge } from 'lodash';
 import {
+  START_FETCHING_SETLISTS,
   SET_AS_PLAYING,
   SET_NOT_PLAYING,
   RECEIVE_SETLISTS,
+  RECEIVE_SETLIST,
 } from '../actions/setlistActions';
 
-const setlistsReducer = (state = {}, action) => {
+const initialState = {
+  entities: {},
+  loading: false,
+};
+
+const setlistsReducer = (state = initialState, action) => {
   Object.freeze(state);
-  let newState;
+  let newState = merge({}, state);
+
   switch (action.type) {
+    case START_FETCHING_SETLISTS:
+      newState.loading = true;
+      return newState;
     case RECEIVE_SETLISTS:
-      newState = {};
       action.setlists.map((setlist) => { newState[setlist.id] = setlist; });
-      return Object.assign({}, state, newState);
+      return newState;
+    case RECEIVE_SETLIST:
+      newState.entities[action.setlist.id] = action.setlist;
+      newState.loading = false;
+      return newState;
     case SET_AS_PLAYING:
       newState = { [action.setlistId]: { nowPlaying: true } };
       return _.merge({}, state, newState);
