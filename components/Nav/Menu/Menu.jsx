@@ -42,7 +42,7 @@ class Menu extends React.Component {
           </div>
           </button>
           <Link className="modal-option" to="/live">
-            View other streams
+            View current streams
           </Link>
           {
             managerLink
