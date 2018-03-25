@@ -2,7 +2,7 @@ import React from 'react';
 import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
 const OT = require('@opentok/client');
 
-export default class VideoPlayer extends React.Component {
+export default class VideoFrame extends React.Component {
   constructor(props) {
     super(props);
 
@@ -89,9 +89,11 @@ export default class VideoPlayer extends React.Component {
   }
 
   render() {
-    if (this.state) return null;
-    // const { apiKey, sessionId, token } = this.props.credentials;
+    if (!this.props.displayVideo) return null;
+
+    const { apiKey, sessionId, token } = this.props.credentials;
     const { error, connection, publishVideo } = this.state;
+    
     return (
       <div>
         <div id="sessionStatus">Session Status: {connection}</div>

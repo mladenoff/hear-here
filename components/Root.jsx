@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import VideoPlayer from './VideoPlayer/VideoPlayerContainer';
+import Dashboard from './Dashboard/Dashboard';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <div>
-      <VideoPlayer />
+      <Dashboard />
     </div>
   </Provider>
 );
