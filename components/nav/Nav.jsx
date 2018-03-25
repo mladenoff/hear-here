@@ -13,6 +13,7 @@ class Nav extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
+
   }
 
   handleChange(e) {
