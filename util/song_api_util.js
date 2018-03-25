@@ -113,7 +113,8 @@ export const createSongs = (arrayOfSongs) => {
             "setlist_id",
             "file_url",
             "title",
-            "ord"
+            "ord",
+            "archive_id"
           ]
         }
       }
