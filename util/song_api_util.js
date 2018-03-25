@@ -1,6 +1,6 @@
 let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
 
- export const createSetlist = (setlist) => {
+export const createSong = (song) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -12,21 +12,21 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
   let body = {
     "type": "insert",
     "args": {
-      "table": "setlists",
+      "table": "songs",
       "objects": [
         {
-          "name": setlist.name,
-          "band_id": setlist.bandId,
-          "description": setlist.description,
-          "scheduled_date": setlist.scheduled_date
+          "setlist_id": song.setlistId,
+          "file_url": song.fileUrl,
+          "title": song.title,
+          "ord": song.ord
         }
       ],
       "returning": [
         "id",
-        "name",
-        "band_id",
-        "description",
-        "scheduled_date"
+        "setlist_id",
+        "file_url",
+        "title",
+        "ord"
       ]
     }
   };
@@ -42,7 +42,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     });
 };
 
- export const fetchSetlist = (id) => {
+export const fetchSong = (id) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -54,13 +54,13 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
   let body = {
     "type": "select",
     "args": {
-      "table": "setlists",
+      "table": "songs",
       "columns": [
         "id",
-        "name",
-        "band_id",
-        "description",
-        "scheduled_date"
+        "setlist_id",
+        "file_url",
+        "title",
+        "ord"
       ],
       "where": {
         "id": {
@@ -81,8 +81,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     });
 };
 
-
- export const fetchSetlists = (bandId) => {
+export const fetchSongs = (setlistId) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -94,17 +93,17 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
   let body = {
     "type": "select",
     "args": {
-      "table": "setlists",
+      "table": "songs",
       "columns": [
         "id",
-        "name",
-        "band_id",
-        "description",
-        "scheduled_date"
+        "setlist_id",
+        "file_url",
+        "title",
+        "ord"
       ],
       "where": {
-        "bandId": {
-          "$eq": bandId
+        "setlist_id": {
+          "$eq": setlistId
         }
       }
     }
