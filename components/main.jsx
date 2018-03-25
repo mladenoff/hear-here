@@ -1,10 +1,6 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '@opentok/client';
-import OpenTok from 'opentok';
 import configureStore from '../store/index';
-
 import Root from './Root';
 
 document.addEventListener('DOMContentLoaded', () => {
