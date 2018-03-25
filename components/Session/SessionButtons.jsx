@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default (props) => (
   props.buttons.map((b) => (
-    <button
+    <div
       className="modal-option"
       onClick={props[b.action]}
     >
-      {b.text}
-    </button>
+        {b.text}
+    </div>
   ))
 );
