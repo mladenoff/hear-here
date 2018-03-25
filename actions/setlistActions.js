@@ -1,4 +1,6 @@
 import * as APIUtil from '../util/setlist_api_util';
+import { setListFilter, formatSongsArray } from '../reducers/selectors';
+import { createSongs } from './songActions';
 
 export const RECEIVE_SETLIST = 'RECEIVE_SETLIST';
 export const RECEIVE_SETLISTS = 'RECEIVE_SETLISTS';
@@ -31,15 +33,32 @@ export const setNotPlaying = setlistId => ({
   setlistId,
 });
 
-export const fetchSetlist = setlistId => dispatch => {
+export const fetchSetlist = setlistId => (dispatch) => {
   dispatch(startFetchingSetlists());
-  return APIUtil.fetchSetlist(setlistId).then(nestedSetlist => {
-    dispatch(receiveSetlist(nestedSetlist));
+  return APIUtil.fetchSetlist(setlistId).then((nestedSetlist) => {
+    return dispatch(receiveSetlist(nestedSetlist));
   });
 };
 
 export const fetchSetlists = () => (dispatch) => {
   return APIUtil.fetchSetlists().then(
     setlists => dispatch(receiveSetlists(setlists)),
+  );
+};
+
+export const createSetlist = setlist => (dispatch) => {
+  return APIUtil.createSetlist(setListFilter(setlist)).then(
+    (nestedSetlist) => {
+      dispatch(receiveSetlist(nestedSetlist));
+
+      const setlistId = nestedSetlist[0].id;
+
+      const formattedSongsArray = formatSongsArray(// make a selector!!!
+        setlist,
+        setlistId,
+      );
+
+      dispatch(createSongs(formattedSongsArray)); // TODO: make this action!!!
+    },
   );
 };
