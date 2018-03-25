@@ -1,6 +1,6 @@
 let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
 
- const createSetlist = (setlist) => {
+ export const createSetlist = (setlist) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -42,7 +42,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     });
 };
 
- const fetchSetlist = (id) => {
+ export const fetchSetlist = (id) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -81,7 +81,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     });
 };
 
- const fetchSetlists = (bandId) => {
+ export const fetchSetlists = (bandId) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
