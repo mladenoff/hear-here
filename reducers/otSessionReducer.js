@@ -5,17 +5,25 @@ const initialState = {
   sessionId: null,
   sessionToken: null,
   errors: [],
+  openTok: null,
 };
 
 const otSessionReducer = (state = initialState, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
 
+  let sessionToken, sessionId;
+
   switch(action.type) {
     case otSessionConstants.RECEIVE_OT_SESSION:
-      const sessionId = action.data.sessionId;
-      const sessionToken = action.data.generateToken();
-      return merge(newState, { sessionId, sessionToken });
+      sessionId = action.data.sessionId;
+      sessionToken = action.data.generateToken();
+      const openTok = action.data;
+      return merge(newState, { sessionId, sessionToken, openTok });
+    case otSessionConstants.RECEIVE_OT_SESSION_TOKEN:
+      sessionToken = action.data.sessionToken;
+      sessionId = action.data.sessionId;
+      return merge(newState, { sessionToken, sessionId });
     case otSessionConstants.RECEIVE_OT_SESSION_ERROR:
       newState.errors.push(action.error);
       return newState;

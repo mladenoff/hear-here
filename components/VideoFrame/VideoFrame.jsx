@@ -94,7 +94,7 @@ export default class VideoFrame extends React.Component {
 
     const { sessionId, sessionToken } = this.props;
     const { error, connection, publishVideo } = this.state;
-
+    // debugger
     return (
       <div>
         <div id="sessionStatus">Session Status: {connection}</div>
@@ -114,19 +114,11 @@ export default class VideoFrame extends React.Component {
             {publishVideo ? 'Disable' : 'Enable'} Video
           </button>
           <OTPublisher
-            properties={{ publishVideo, width: 50, height: 50, }}
+            properties={{ publishVideo, width: 100, height: 100, }}
             onPublish={this.onPublish}
             onError={this.onPublishError}
             eventHandlers={this.publisherEventHandlers}
           />
-          <OTStreams>
-            <OTSubscriber
-              properties={{ width: 100, height: 100 }}
-              onSubscribe={this.onSubscribe}
-              onError={this.onSubscribeError}
-              eventHandlers={this.subscriberEventHandlers}
-            />
-          </OTStreams>
         </OTSession>
       </div>
     );

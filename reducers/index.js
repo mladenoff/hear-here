@@ -4,7 +4,6 @@ import songs from './songsReducer';
 import bands from './bandsReducer';
 import session from './sessionReducer';
 import setlists from './setlistsReducer';
-import otSession from './otSessionReducer';
 import ui from './uiReducer';
 
 export default combineReducers({
@@ -12,6 +11,5 @@ export default combineReducers({
   session,
   setlists,
   songs,
-  otSession,
   ui,
 });

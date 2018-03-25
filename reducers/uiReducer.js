@@ -1,16 +1,19 @@
-import { uiConstants } from '../actions/uiActions';
+import { otSessionConstants } from '../actions/otSessionActions';
 import { merge } from 'lodash';
+import { combineReducers } from 'redux';
+import otSession from './otSessionReducer';
 
 const initialState = {
   displayVideo: false
 };
 
-const uiReducer = (state = initialState, action) => {
+const display = (state = initialState, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
 
   switch(action.type) {
-    case uiConstants.DISPLAY_VIDEO:
+    case otSessionConstants.RECEIVE_OT_SESSION:
+    case otSessionConstants.RECEIVE_OT_SESSION_TOKEN:
       newState.displayVideo = true;
       return newState;
     default:
@@ -18,4 +21,7 @@ const uiReducer = (state = initialState, action) => {
   }
 };
 
-export default uiReducer;
+export default combineReducers({
+  display,
+  otSession
+});
