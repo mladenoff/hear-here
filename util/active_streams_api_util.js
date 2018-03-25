@@ -99,7 +99,28 @@ export const fetchActiveStream = (activeStreamId) => {
         "id",
         "setlist_id",
         "session_id",
-        "active_song_id"
+        "active_song_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "description",
+            "scheduled_date"
+          ]
+        },
+        {
+          "name": "active_song",
+          "columns": [
+            "id",
+            "setlist_id",
+            "file_url",
+            "title",
+            "ord",
+            "archive_id"
+          ]
+        }
       ],
       "where": {
         "id": {
@@ -137,7 +158,28 @@ export const fetchActiveStreamsBySessionId = (sessionId) => {
         "id",
         "setlist_id",
         "session_id",
-        "active_song_id"
+        "active_song_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "description",
+            "scheduled_date"
+          ]
+        },
+        {
+          "name": "active_song",
+          "columns": [
+            "id",
+            "setlist_id",
+            "file_url",
+            "title",
+            "ord",
+            "archive_id"
+          ]
+        }
       ],
       "where": {
         "session_id": {
@@ -175,7 +217,28 @@ export const fetchActiveStreamsBySetlistId = (setlistId) => {
         "id",
         "setlist_id",
         "session_id",
-        "active_song_id"
+        "active_song_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "description",
+            "scheduled_date"
+          ]
+        },
+        {
+          "name": "active_song",
+          "columns": [
+            "id",
+            "setlist_id",
+            "file_url",
+            "title",
+            "ord",
+            "archive_id"
+          ]
+        }
       ],
       "where": {
         "setlist_id": {
