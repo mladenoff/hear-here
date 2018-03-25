@@ -99,7 +99,7 @@ export default class VideoFrame extends React.Component {
     const { error, connection, publishVideo } = this.state;
     // debugger
     return (
-      <div style={defaultSizing}>
+      <div style={defaultSizing} className='publisher-window'>
         <OTSession
           style={defaultSizing}
           apiKey={API_KEY}
@@ -116,7 +116,6 @@ export default class VideoFrame extends React.Component {
             onPublish={this.onPublish}
             onError={this.onPublishError}
             eventHandlers={this.publisherEventHandlers}
-            className='publisher-window'
           />
         </OTSession>
       </div>
