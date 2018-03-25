@@ -28,18 +28,21 @@ class NavSearch extends React.Component {
     clearTimeout(this.timeout);
 
     this.setState({ query: e.target.value }, () => {
-      this.props.history.replace(`/search?query=${this.state.query}`);
+      console.log(this.props);
+      const route = this.props.location.pathname;
+      this.props.history.replace(`${route}?query=${this.state.query}`);
 
       this.timeout = setTimeout(() => {
-        // API Call here
         this.props.search(this.state.query);
       }, 300);
     });
   }
 
   startSearch() {
-    let hashUrl = '/search';
-    this.props.history.push(hashUrl);
+    let hashUrl = '/search/bands';
+    if (this.props.location.pathname.split("/")[1] !== 'search') {
+      this.props.history.push(hashUrl);
+    }
   }
 
   render() {

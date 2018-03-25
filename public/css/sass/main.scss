@@ -9,12 +9,16 @@ body {
   height: 100vh;
 }
 
-input:focus {
+button, a, input:focus {
   outline-color: $main-color;
 }
 
 input[type="submit"]:focus {
   outline: none;
+}
+
+.back-arrow {
+  height: 25px;
 }
 
 @import 'portal/portal';

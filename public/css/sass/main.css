@@ -57,11 +57,14 @@ body {
   color: #151515;
   height: 100vh; }
 
-input:focus {
+button, a, input:focus {
   outline-color: #4a2f83; }
 
 input[type="submit"]:focus {
   outline: none; }
+
+.back-arrow {
+  height: 25px; }
 
 .stream-portal {
   margin: 0 auto;
@@ -185,8 +188,6 @@ header {
     .upper-nav .upper-left-nav-container .logo {
       height: 25px;
       margin-left: 5px; }
-    .upper-nav .upper-left-nav-container .back-arrow {
-      height: 25px; }
   .upper-nav .upper-left-nav-container, .upper-nav .menu-container {
     width: 35px; }
   .upper-nav input {

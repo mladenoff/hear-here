@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SessionButtonsContainer from '../../Session/SessionButtonsContainer';
+import BackButton from '../../shared/BackButton';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Menu extends React.Component {
       modalOpen: false,
     };
     this.toggleModal = this.toggleModal.bind(this);
+    console.log(props);
   }
 
   toggleModal() {
@@ -32,9 +34,7 @@ class Menu extends React.Component {
           alt="menu button"/>
         <aside className={`menu-modal ${modalToggle}`}>
           <button id="close" className="modal-option" onClick={this.toggleModal} >
-          <div>
-            X
-          </div>
+          <BackButton />
           <div className="username">
             {
               this.props.username 
