@@ -18,6 +18,7 @@ export default class VideoFrame extends React.Component {
 
     this.sessionEventHandlers = {
       sessionConnected: () => {
+        console.log('sessionconnected');
         this.setState({ connection: 'Connected' });
       },
       sessionDisconnected: () => {
@@ -29,6 +30,9 @@ export default class VideoFrame extends React.Component {
       sessionReconnecting: () => {
         this.setState({ connection: 'Reconnecting' });
       },
+      streamCreated: (event) => {
+        console.log('eventasdfd sfdsfsf streamCreated', event);
+      }
     };
 
     this.publisherEventHandlers = {
@@ -101,24 +105,21 @@ export default class VideoFrame extends React.Component {
     return (
       <div style={defaultSizing} className='publisher-window'>
         <OTSession
-          style={defaultSizing}
           apiKey={API_KEY}
           sessionId={sessionId}
           token={sessionToken}
           onError={this.onSessionError}
           eventHandlers={this.sessionEventHandlers}
         >
-          {/*}<button id="videoButton" onClick={this.toggleVideo}>
-            {publishVideo ? 'Disable' : 'Enable'} Video
-          </button>*/}
-          { isPublisher
+          {
+            isPublisher
             ?
             <OTPublisher
               properties={{ publishVideo, width: '100%', height: '100%' }}
               onPublish={this.onPublish}
               onError={this.onPublishError}
               eventHandlers={this.publisherEventHandlers}
-            />
+              />
             :
             <OTStreams>
               <OTSubscriber
@@ -126,7 +127,7 @@ export default class VideoFrame extends React.Component {
                 onSubscribe={this.onSubscribe}
                 onError={this.onSubscribeError}
                 eventHandlers={this.subscriberEventHandlers}
-                />
+              />
             </OTStreams>
           }
         </OTSession>
@@ -134,3 +135,7 @@ export default class VideoFrame extends React.Component {
     );
   }
 }
+
+{/*}<button id="videoButton" onClick={this.toggleVideo}>
+{publishVideo ? 'Disable' : 'Enable'} Video
+</button>*/}

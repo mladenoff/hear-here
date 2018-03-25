@@ -24,7 +24,7 @@ class SetlistIndex extends React.Component {
             />
           ))}
         </ul>
-        <button onClick={() => this.props.history.push('/streams/2_MX40NjA4Njg0Mn5-MTUyMjAxMDMxNzI4NH45OWdTR3VYWFNnTGJZV1U5QjIzc2I1SER-UH4')}>Join a random stream</button>
+        <button onClick={() => this.props.history.push('/streams/1_MX40NjA4Njg0Mn5-MTUyMjAxNDM5NDMxMX5CZ0NzaWEzUzNGUVQydEhHWFlJeFluNUd-UH4')}>Join a random stream</button>
         </div>
       );
     }
