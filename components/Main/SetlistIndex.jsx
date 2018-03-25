@@ -10,6 +10,7 @@ class SetlistIndex extends React.Component {
   componentDidMount() {
     this.props.fetchBands();
     this.props.fetchSetlists().then(() => this.props.setAsPlaying(4));
+    debugger
   }
 
   render() {
@@ -20,6 +21,7 @@ class SetlistIndex extends React.Component {
             <SetlistIndexItem
               setlist={setlist}
               key={setlist.id}
+              joinSession={this.props.joinSession}
               band={this.props.bands[setlist.band_id]}
             />
           ))}
