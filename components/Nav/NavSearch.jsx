@@ -5,7 +5,7 @@ class NavSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: '',
+      query: this.input,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,12 +26,14 @@ class NavSearch extends React.Component {
   }
 
   startSearch() {
-    this.props.history.push('/search');
+    let hashUrl = '/search';
+    this.props.history.push(hashUrl);
   }
 
   render() {
     return (
       <input
+        ref="input"
         type="text"
         onChange={this.handleChange}
         onFocus={this.startSearch}

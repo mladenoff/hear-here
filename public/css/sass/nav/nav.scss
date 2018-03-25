@@ -1,5 +1,6 @@
 header {
-  box-shadow: 0px 2px 6px -2px grey;
+  box-shadow: 0px 2px 6px -2px $gray;
+  margin-top: 5px;
 }
 .upper-nav {
   display: flex;
@@ -34,18 +35,23 @@ header {
       left: 0px;
       width: 100vw;
       height: 100vh;
-      background-color: $light-color;
+      background-color: $white;
       display: flex;
       flex-direction: column;
 
       .modal-option {
-        padding: 25px;
-        font-size: 24px;
+        padding: 20px;
+        font-size: 16px;
         padding-left: 53px;
-        border-bottom: 1px solid $dark-color;
+        border-bottom: 1px solid $gray;
         font-family: $san-serif-font;
         text-decoration: none;
         color: $black;
+      }
+
+      #close {
+        display: flex;
+        padding: 25px;
       }
     }
 
@@ -71,6 +77,7 @@ header {
     font-weight: bold;
     font-family: $san-serif-font;
     text-decoration: none;
+    font-size: 20px;
     color: $dark-color;
   }
 

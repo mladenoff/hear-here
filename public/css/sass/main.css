@@ -52,7 +52,8 @@ body {
   color: #272838; }
 
 header {
-  box-shadow: 0px 2px 6px -2px grey; }
+  box-shadow: 0px 2px 6px -2px #939393;
+  margin-top: 5px; }
 
 .upper-nav {
   display: flex;
@@ -79,17 +80,20 @@ header {
       left: 0px;
       width: 100vw;
       height: 100vh;
-      background-color: #b790be;
+      background-color: #eeeeee;
       display: flex;
       flex-direction: column; }
       .upper-nav .menu-container .menu-modal .modal-option {
-        padding: 25px;
-        font-size: 24px;
+        padding: 20px;
+        font-size: 16px;
         padding-left: 53px;
-        border-bottom: 1px solid #272838;
+        border-bottom: 1px solid #939393;
         font-family: Helvetica, sans-serif;
         text-decoration: none;
         color: #181818; }
+      .upper-nav .menu-container .menu-modal #close {
+        display: flex;
+        padding: 25px; }
     .upper-nav .menu-container .modal-closed {
       display: none; }
 
@@ -107,6 +111,7 @@ header {
     font-weight: bold;
     font-family: Helvetica, sans-serif;
     text-decoration: none;
+    font-size: 20px;
     color: #272838; }
   .tabs #selected {
     border-bottom: 2px solid #b790be; }
