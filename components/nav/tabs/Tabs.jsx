@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import TabsItem from './TabsItem';
 
-const Tabs = ({ tabs }) => (
-  <section>
+const Tabs = ({ tabs , curr }) => (
+  <section className="tabs">
     {
       tabs.map(tab => (
-        <Link key={tab.route} to={tab.route}>{tab.name}</Link>
+        <TabsItem key={tab.route} tab={tab} curr={curr} />
       ))
     }
   </section>
