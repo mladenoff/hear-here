@@ -1,13 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
 import UserTabsContainer from './Tabs/UserTabsContainer';
 import ManageTabsContainer from './Tabs/ManageTabsContainer';
 import LeftNav from './LeftNav';
 import MenuContainer from './Menu/MenuContainer';
 import NavSearch from './NavSearch';
 
-const Nav = () => (
+export default () => (
   <header>
     <section className="upper-nav">
       <LeftNav />
@@ -21,5 +20,3 @@ const Nav = () => (
     </Switch>
   </header>
 );
-
-export default withRouter(Nav);

@@ -16,28 +16,26 @@ class Menu extends React.Component {
 
   render() {
     const managerLink = this.props.isManager ? (
-      <Link className="modal-option" to="/manage/upcoming">Manage Sets</Link>
+      <Link to="/manager/upcoming">Manage Sets</Link>
     ) : '';
 
     const modalToggle = this.state.modalOpen ? '' : 'modal-closed';
 
     return (
-      <div
+      <button
         onClick={this.toggleModal}
         className="menu-container">
         |||
         <aside className={`menu-modal ${modalToggle}`}>
-          <button class="modal-option" onClick={this.toggleModal} >
+          <button onClick={this.toggleModal} >
             X
           </button>
-          <Link className="modal-option" to="/live">
-            Current Live Sets
-          </Link>
+          <Link to="/live">Current Live Sets</Link>
           {
             managerLink
           }
         </aside>
-      </div>
+      </button>
     );
   }
 }
