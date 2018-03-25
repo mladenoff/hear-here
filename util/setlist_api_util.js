@@ -81,7 +81,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     });
 };
 
- const fetchSetlists = () => {
+ const fetchSetlists = (bandId) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -100,7 +100,12 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "band_id",
         "description",
         "scheduled_date"
-      ]
+      ],
+      "where": {
+        "bandId": {
+          "$eq": bandId
+        }
+      }
     }
   };
 
