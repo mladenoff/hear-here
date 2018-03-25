@@ -1,0 +1,10 @@
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/colors';
+
+body {
+  background-color: $white;
+  color: $dark-color;
+}
+
+@import 'nav/nav';

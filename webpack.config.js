@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './components/main.jsx',
+  entry: './index.jsx',
   node: {
     fs: 'empty',
     net: 'empty',
