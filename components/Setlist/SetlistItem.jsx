@@ -1,15 +1,17 @@
 import React from 'react';
 
-class Setlist extends React.Component {
+class SetlistItem extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div></div>
+      <div>
+        
+      </div>
     );
   }
 }
 
-export default Setlist;
+export default SetlistItem;
