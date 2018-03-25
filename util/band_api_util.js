@@ -57,7 +57,13 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "id",
         "name",
         "img_url",
-        "manager_id"
+        "manager_id",
+        {
+          "name": "setlists",
+          "columns": [
+            "id"
+          ]
+        }
       ],
       "where": {
         "id": {
@@ -95,7 +101,13 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "id",
         "name",
         "img_url",
-        "manager_id"
+        "manager_id",
+        {
+          "name": "setlists",
+          "columns": [
+            "id"
+          ]
+        }
       ]
     }
   };

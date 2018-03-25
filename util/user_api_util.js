@@ -95,7 +95,13 @@ export const fetchUser = (id) => {
         "email",
         "img_url",
         "is_manager",
-        "username"
+        "username",
+        {
+          "name": "bands",
+          "columns": [
+            "id"
+          ]
+        }
       ],
       "where": {
         "id": {
@@ -136,7 +142,13 @@ export const fetchUsers = () => {
         "email",
         "img_url",
         "is_manager",
-        "username"
+        "username",
+        {
+          "name": "bands",
+          "columns": [
+            "id"
+          ]
+        }
       ]
     }
   };
