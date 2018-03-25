@@ -25,7 +25,10 @@ class Menu extends React.Component {
       <div
         onClick={this.toggleModal}
         className="menu-container">
-        |||
+        <img
+          className="menu-button"
+          src="./assets/menu-button.png"
+          alt="menu button"/>
         <aside className={`menu-modal ${modalToggle}`}>
           <button id="close" className="modal-option" onClick={this.toggleModal} >
           <div>

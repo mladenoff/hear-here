@@ -48,12 +48,12 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: #eeeeee;
-  color: #272838; }
+  background-color: #f4f4f4;
+  color: #151515; }
 
 header {
-  box-shadow: 0px 2px 6px -2px #939393;
-  margin-top: 5px; }
+  box-shadow: 0px 2px 6px -2px #6c6c6c;
+  background-color: #d1d1d1; }
 
 .upper-nav {
   display: flex;
@@ -69,28 +69,32 @@ header {
     flex-grow: 5;
     border-radius: 5px;
     border: 0px;
-    padding: 10px; }
+    padding: 10px;
+    background-color: #f4f4f4; }
   .upper-nav .menu-container {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end; }
+    .upper-nav .menu-container .menu-button {
+      height: 21px;
+      opacity: 0.9; }
     .upper-nav .menu-container .menu-modal {
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100vw;
       height: 100vh;
-      background-color: #eeeeee;
+      background-color: #d1d1d1;
       display: flex;
       flex-direction: column; }
       .upper-nav .menu-container .menu-modal .modal-option {
         padding: 20px;
         font-size: 16px;
         padding-left: 53px;
-        border-bottom: 1px solid #939393;
+        border-bottom: 1px solid #d1d1d1;
         font-family: Helvetica, sans-serif;
         text-decoration: none;
-        color: #181818; }
+        color: #151515; }
       .upper-nav .menu-container .menu-modal #close {
         display: flex;
         padding: 25px; }
@@ -112,8 +116,9 @@ header {
     font-family: Helvetica, sans-serif;
     text-decoration: none;
     font-size: 20px;
-    color: #272838; }
+    color: #272838;
+    border-bottom: 2.5px solid #d1d1d1; }
   .tabs #selected {
-    border-bottom: 2px solid #b790be; }
+    border-bottom: 2.5px solid #b790be; }
 
 /*# sourceMappingURL=main.css.map */
