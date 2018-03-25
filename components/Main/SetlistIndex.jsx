@@ -16,6 +16,7 @@ class SetlistIndex extends React.Component {
     if (this.props.setlists && this.props.bands) {
       return (
         <ul>
+          eeeeeyyyy
           {this.props.setlists.map(setlist => (
             <SetlistIndexItem
               setlist={setlist}
