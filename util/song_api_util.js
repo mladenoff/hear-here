@@ -42,6 +42,39 @@ export const createSong = (song) => {
     });
 };
 
+export const createSongs = (arrayOfSongs) => {
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
+
+  let body = {
+    "type": "bulk",
+    "args": [
+      {
+        "type": "insert",
+        "args": {
+          "table": "songs",
+          "objects": arrayOfSongs
+        }
+      }
+    ]
+  };
+
+  requestOptions.body = JSON.stringify(body);
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
 export const fetchSong = (id) => {
   let requestOptions = {
     "method": "POST",
