@@ -36,6 +36,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --watch",
     "start": "node dist/server.js",
+    "postinstall": "webpack",
     "sass": "sass --watch public/css/sass/main.scss:public/css/sass/main.css"
   },
   "repository": {
