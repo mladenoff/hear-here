@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
 
 import SetlistIndex from './SetlistIndex';
-import { fetchSetlists, setAsPlaying } from '../../actions/setlistActions';
-import { fetchBands } from '../../actions/bandActions';
 import { nowPlayingSelector } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
@@ -10,10 +8,4 @@ const mapStateToProps = state => ({
   setlists: nowPlayingSelector(state.setlists),
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchSetlists: () => dispatch(fetchSetlists()),
-  fetchBands: () => dispatch(fetchBands()),
-  setAsPlaying: setlistId => dispatch(setAsPlaying(setlistId)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SetlistIndex);
+export default connect(mapStateToProps)(SetlistIndex);

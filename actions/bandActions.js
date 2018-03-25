@@ -8,9 +8,9 @@ export const receiveBands = bands => ({
   bands,
 });
 
-export const receiveBand = nestedBand => ({
+export const receiveBand = band => ({
   type: RECEIVE_BAND,
-  band: nestedBand[0],
+  band,
 });
 
 export const createBand = band => (dispatch) => {
@@ -19,15 +19,15 @@ export const createBand = band => (dispatch) => {
   );
 };
 
-export const fetchBands = () => (dispatch) => {
+export const getBands = () => (dispatch) => {
   APIUtil.fetchBands().then(
     bands => dispatch(receiveBands(bands)),
   );
 };
 
-export const fetchBand = bandId => (dispatch) => {
+export const getBand = bandId => (dispatch) => {
   APIUtil.fetchBand(bandId).then(
-    nestedBand => dispatch(receiveBand(nestedBand)),
+    nestedBand => dispatch(receiveBand(nestedBand[0])),
   );
 };
 
@@ -39,8 +39,8 @@ export const fetchBand = bandId => (dispatch) => {
 //       name: "band name"
 // }
 
-window.fetchBand = fetchBand;
-window.fetchBands = fetchBands;
+window.getBand = getBand;
+window.getBands = getBands;
 window.createBand = createBand;
 
 // const band = {

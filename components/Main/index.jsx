@@ -15,9 +15,9 @@ const Main = () => (
   <div>
    HELLO WORLD
     <Switch>
-      <Route path="/live" component={LiveSetlistIndexContainer} />
-      <Route path="/upcoming" component={UpcomingSetlistIndexContainer} />
-      <Route path="/setlist/:id" component={SetlistContainer} />
+      <Route path="/live" comoponent={LiveSetlistIndexContainer} />
+      <Route path="/upcoming" comoponent={UpcomingSetlistIndexContainer} />
+      <Route path="/setlist/:id" Component={SetlistContainer} />
     </Switch>
   </div>
 );

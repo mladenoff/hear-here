@@ -7,12 +7,11 @@ class SetlistIndexItem extends React.Component {
 
   render() {
     return (
-      <li className="set-list-item">
+      <li>
         <a><img /></a>
-        <span>{this.props.setlist.name}</span> <br/>
-        <span>{this.props.setlist.description}</span> <br />
-        <span>{this.props.band.name}</span> <br />
-        <button>Subscribe</button>
+        <span>{this.props.setlist.title}</span>
+        <span>{this.props.setlist.description}</span>
+        <span>{this.props.band.name}</span>
       </li>
     );
   }
