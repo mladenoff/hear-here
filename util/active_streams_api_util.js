@@ -54,7 +54,17 @@ export const fetchActiveStream = (activeStreamId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "scheduled_date",
+            "description"
+          ]
+        }
       ],
       "where": {
         "id": {
@@ -91,13 +101,65 @@ export const fetchActiveStreamsBySessionId = (sessionId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "scheduled_date",
+            "description"
+          ]
+        }
       ],
       "where": {
         "session_id": {
           "$eq": sessionId
         }
       }
+    }
+  };
+
+  requestOptions.body = JSON.stringify(body);
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
+export const fetchAllActiveStreams = () => {
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "credentials": "include"
+  };
+
+  let body = {
+    "type": "select",
+    "args": {
+      "table": "active_streams",
+      "columns": [
+        "id",
+        "setlist_id",
+        "session_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "scheduled_date",
+            "description"
+          ]
+        }
+      ],
     }
   };
 
@@ -128,7 +190,17 @@ export const fetchActiveStreamsBySetlistId = (setlistId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        {
+          "name": "setlist",
+          "columns": [
+            "id",
+            "name",
+            "band_id",
+            "scheduled_date",
+            "description"
+          ]
+        }
       ],
       "where": {
         "setlist_id": {
