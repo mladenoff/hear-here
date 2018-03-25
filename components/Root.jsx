@@ -11,10 +11,10 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
       <div>
-        <Dashboard />
-        <VideoFrameContainer />
         <Nav />
         <Main />
+        <Dashboard />
+        <VideoFrameContainer />
       </div>
     </HashRouter>
   </Provider>
