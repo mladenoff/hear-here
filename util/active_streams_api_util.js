@@ -1,6 +1,6 @@
 let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
 
-export const createActiveStream = (setlistId, sessionId) => {
+export const createActiveStream = (activeStream) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -15,14 +15,58 @@ export const createActiveStream = (setlistId, sessionId) => {
       "table": "active_streams",
       "objects": [
         {
-          "setlist_id": setlistId,
-          "session_id": sessionId
+          "setlist_id": activeStream.setlistId,
+          "session_id": activeStream.sessionId,
+          "active_song_id": activeStream.activeSongId
         }
       ],
       "returning": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        "active_song_id"
+      ]
+    }
+  };
+
+  requestOptions.body = JSON.stringify(body);
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
+export const updateActiveStream = (activeStream) => {
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
+
+  let body = {
+    "type": "update",
+    "args": {
+      "table": "active_streams",
+      "where": {
+        "id": {
+          "$eq": activeStream.id
+        }
+      },
+      "$set": {
+        "setlist_id": activeStream.setlistId,
+        "session_id": activeStream.sessionId,
+        "active_song_id": activeStream.activeSongId
+      },
+      "returning": [
+        "setlist_id",
+        "session_id",
+        "active_song_id"
       ]
     }
   };
@@ -54,7 +98,8 @@ export const fetchActiveStream = (activeStreamId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        "active_song_id"
       ],
       "where": {
         "id": {
@@ -91,7 +136,8 @@ export const fetchActiveStreamsBySessionId = (sessionId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        "active_song_id"
       ],
       "where": {
         "session_id": {
@@ -128,7 +174,8 @@ export const fetchActiveStreamsBySetlistId = (setlistId) => {
       "columns": [
         "id",
         "setlist_id",
-        "session_id"
+        "session_id",
+        "active_song_id"
       ],
       "where": {
         "setlist_id": {
