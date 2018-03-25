@@ -99,9 +99,3 @@ class SetlistForm extends React.Component {
 }
 
 export default SetlistForm;
-
-{
-  name: string
-  description: string
-  songs: array of strings
-}
