@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // SELECTOR
 const isActive = (state, songId) => {
-  return state.ui.activeSongId === songId;
+  return state.ui.display.activeSongId === songId;
 }
 
 // CONNECT
@@ -13,10 +13,13 @@ const mapStateToProps = (state, { item }) => {
 
 // COMPONENT
 
-const SetlistItem = (props) => {
-  debugger
+const SetlistItem = ({ isActive }) => {
+  let className = 'setlist-item';
+
+  if (isActive) className += 'song-active';
+
   return (
-    <div className='setlist-item'>
+    <div className={className}>
       {props.item.title}
     </div>
   );
