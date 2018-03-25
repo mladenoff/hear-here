@@ -97,7 +97,7 @@ export default class VideoFrame extends React.Component {
 
     const { sessionId, sessionToken } = this.props;
     const { error, connection, publishVideo } = this.state;
-    // debugger
+    
     return (
       <div style={defaultSizing} className='publisher-window'>
         <OTSession

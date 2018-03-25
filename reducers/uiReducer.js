@@ -1,4 +1,5 @@
 import { otSessionConstants } from '../actions/otSessionActions';
+import { UPDATE_ACTIVE_SONG } from '../actions/songActions';
 import { merge } from 'lodash';
 import { combineReducers } from 'redux';
 import otSession from './otSessionReducer';
@@ -6,6 +7,7 @@ import otSession from './otSessionReducer';
 const initialState = {
   displayVideo: false,
   activeSongId: null,
+  archiveId: null
 };
 
 const display = (state = initialState, action) => {
@@ -16,6 +18,9 @@ const display = (state = initialState, action) => {
     case otSessionConstants.RECEIVE_OT_SESSION:
     case otSessionConstants.RECEIVE_OT_SESSION_TOKEN:
       newState.displayVideo = true;
+      return newState;
+    case UPDATE_ACTIVE_SONG:
+      newState.activeSongId = action.songId;
       return newState;
     default:
       return state;
