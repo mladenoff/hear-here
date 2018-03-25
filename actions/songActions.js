@@ -7,21 +7,15 @@ export const receiveSongs = songs => ({
   type: RECEIVE_SONGS, songs
 });
 
-<<<<<<< HEAD
-export const updateActiveSong = songId => ({
-  type: UPDATE_ACTIVE_SONG, songId
-});
 
 export const createSongs = formattedSongsArray => (dispatch) => {
   return APIUtil.createSongs(formattedSongsArray).then(
     response => dispatch(receiveSongs(response[0].returning)),
   );
-=======
 export const updateActiveSong = songId => (dispatch, getState) => {
   const state = getState();
 
   if (!state.ui.display.displayVideo) return;
 
   dispatch({type: UPDATE_ACTIVE_SONG, songId});
->>>>>>> Setup subscribe portal
 };
