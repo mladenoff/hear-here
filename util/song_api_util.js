@@ -18,7 +18,8 @@ export const createSong = (song) => {
           "setlist_id": song.setlistId,
           "file_url": song.fileUrl,
           "title": song.title,
-          "ord": song.ord
+          "ord": song.ord,
+          "archive_id": song.archiveId
         }
       ],
       "returning": [
@@ -26,7 +27,55 @@ export const createSong = (song) => {
         "setlist_id",
         "file_url",
         "title",
-        "ord"
+        "ord",
+        "archive_id"
+      ]
+    }
+  };
+
+  requestOptions.body = JSON.stringify(body);
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
+export const updateSong = (song) => {
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
+
+  let body = {
+    "type": "update",
+    "args": {
+      "table": "songs",
+      "where": {
+        "id": {
+          "$eq": song.id
+        }
+      },
+      "$set": {
+        "setlist_id": song.setlistId,
+        "file_url": song.fileUrl,
+        "title": song.title,
+        "ord": song.ord,
+        "archive_id": song.archiveId
+      },
+      "returning": [
+        "id",
+        "setlist_id",
+        "file_url",
+        "title",
+        "ord",
+        "archive_id"
       ]
     }
   };
@@ -93,7 +142,8 @@ export const fetchSong = (id) => {
         "setlist_id",
         "file_url",
         "title",
-        "ord"
+        "ord",
+        "archive_id"
       ],
       "where": {
         "id": {
@@ -132,7 +182,8 @@ export const fetchSongs = (setlistId) => {
         "setlist_id",
         "file_url",
         "title",
-        "ord"
+        "ord",
+        "archive_id"
       ],
       "where": {
         "setlist_id": {

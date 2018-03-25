@@ -65,7 +65,8 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
           "name": "songs",
           "columns": [
             "id",
-            "title"
+            "title",
+            "archive_id"
           ]
         }
       ],
@@ -111,7 +112,9 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         {
           "name": "songs",
           "columns": [
-            "id"
+            "id",
+            "title",
+            "archive_id"
           ]
         }
       ],
