@@ -1,6 +1,6 @@
 let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
 
-const createSong = (song) => {
+export const createSong = (song) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -42,7 +42,7 @@ const createSong = (song) => {
     });
 };
 
-const fetchSong = (id) => {
+export const fetchSong = (id) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
@@ -81,7 +81,7 @@ const fetchSong = (id) => {
     });
 };
 
-const fetchSongs = (setlistId) => {
+export const fetchSongs = (setlistId) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
