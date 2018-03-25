@@ -16,7 +16,16 @@ header {
 
     .logo {
       height: 25px;
+      margin-left: 5px;
     }
+
+    .back-arrow {
+      height: 25px;
+    }
+  }
+
+  .upper-left-nav-container, .menu-container {
+    width: 35px;
   }
 
   input {

@@ -54,7 +54,8 @@ table {
     opacity: 1; } }
 body {
   background-color: #f4f4f4;
-  color: #151515; }
+  color: #151515;
+  height: 100vh; }
 
 input:focus {
   outline-color: #4a2f83; }
@@ -77,7 +78,12 @@ header {
     flex-grow: 1;
     margin-right: 2px; }
     .upper-nav .upper-left-nav-container .logo {
+      height: 25px;
+      margin-left: 5px; }
+    .upper-nav .upper-left-nav-container .back-arrow {
       height: 25px; }
+  .upper-nav .upper-left-nav-container, .upper-nav .menu-container {
+    width: 35px; }
   .upper-nav input {
     flex-grow: 5;
     border-radius: 5px;
