@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import UserTabsContainer from './Tabs/UserTabsContainer';
 import ManageTabsContainer from './Tabs/ManageTabsContainer';
 import LeftNav from './LeftNav';
+import MenuContainer from './Menu/MenuContainer';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -43,9 +44,7 @@ class Nav extends React.Component {
             onFocus={this.startSearch}
             placeholder="Search"
             value={this.state.query} />
-          <div className="menu-container">
-          |||
-          </div>
+          <MenuContainer menuToggle={this.state.menuToggle} />
         </section>
         <Switch>
           <Route path="/search" component={() => null} />
