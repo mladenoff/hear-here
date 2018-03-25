@@ -1,19 +1,10 @@
 import React from 'react';
-<<<<<<< HEAD
 import { withRouter } from 'react-router';
-import { Switch, Route, Link } from 'react-router-dom';
-import UserTabsContainer from './tabs/UserTabsContainer';
-import ManageTabsContainer from './tabs/ManageTabsContainer';
-=======
 import { Switch, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import TabsContainer from './tabs/TabsContainer';
->>>>>>> Add Tabs, BackButton, and Nav Search
-=======
-import UserTabsContainer from './tabs/UserTabsContainer';
-import ManageTabsContainer from './tabs/ManageTabsContainer';
->>>>>>> Refactor TabsContainer to be two files
-import BackButton from '../shared/BackButton';
+import UserTabsContainer from './Tabs/UserTabsContainer';
+import ManageTabsContainer from './Tabs/ManageTabsContainer';
+import LeftNav from './LeftNav';
+import MenuContainer from './Menu/MenuContainer';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -23,14 +14,13 @@ class Nav extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
-
   }
 
   handleChange(e) {
     clearTimeout(this.timeout);
 
     this.setState({ query: e.target.value }, () => {
-      this.props.history.push(`/search?query=${this.state.query}`);
+      this.props.history.replace(`/search?query=${this.state.query}`);
 
       this.timeout = setTimeout(() => {
         // API Call here
@@ -47,26 +37,14 @@ class Nav extends React.Component {
     return (
       <header>
         <section className="upper-nav">
-          <Link to="/live" className="upper-left-nav-container">
-            <Switch>
-              <Route
-                path="/search"
-                component={BackButton} />
-              <img
-                className="logo"
-                src="./assets/music.png"
-                alt="music logo" />
-            </Switch>
-          </Link>
+          <LeftNav />
           <input
             type="text"
             onChange={this.handleChange}
             onFocus={this.startSearch}
             placeholder="Search"
             value={this.state.query} />
-          <div className="menu-container">
-          |||
-          </div>
+          <MenuContainer menuToggle={this.state.menuToggle} />
         </section>
         <Switch>
           <Route path="/search" component={() => null} />
