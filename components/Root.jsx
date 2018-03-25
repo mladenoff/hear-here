@@ -4,17 +4,17 @@ import { HashRouter } from 'react-router-dom';
 
 import Dashboard from './Dashboard/Dashboard';
 import VideoFrameContainer from './VideoFrame/VideoFrameContainer';
-import Nav from './nav/Nav';
+import Nav from './Nav/Nav';
 import Main from './Main';
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
       <div>
-        <Dashboard />
-        <VideoFrameContainer />
         <Nav />
         <Main />
+        <Dashboard />
+        <VideoFrameContainer />
       </div>
     </HashRouter>
   </Provider>

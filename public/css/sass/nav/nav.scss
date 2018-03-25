@@ -1,4 +1,7 @@
-
+header {
+  box-shadow: 0px 2px 6px -2px $gray;
+  margin-top: 5px;
+}
 .upper-nav {
   display: flex;
   justify-content: space-between;
@@ -32,7 +35,24 @@
       left: 0px;
       width: 100vw;
       height: 100vh;
-      background-color: $light-color;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+
+      .modal-option {
+        padding: 20px;
+        font-size: 16px;
+        padding-left: 53px;
+        border-bottom: 1px solid $gray;
+        font-family: $san-serif-font;
+        text-decoration: none;
+        color: $black;
+      }
+
+      #close {
+        display: flex;
+        padding: 25px;
+      }
     }
 
     .modal-closed {
@@ -53,15 +73,16 @@
     justify-content: center;
     text-align: center;
     width: 120px;
-    padding-bottom: 3px;
+    padding-bottom: 9px;
     font-weight: bold;
-    font-family: Helvetica, sans-serif;
+    font-family: $san-serif-font;
     text-decoration: none;
+    font-size: 20px;
     color: $dark-color;
   }
 
   #selected {
-    border-bottom: 3px solid $light-color;
+    border-bottom: 2px solid $light-color;
   }
 }
 
