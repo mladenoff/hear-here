@@ -1,5 +1,5 @@
 import React from 'react';
-import SetlistIndexItem from '../Main/SetlistIndexItem';
+import SetlistIndexItem from '../Setlist/SetlistIndexItem';
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);

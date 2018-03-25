@@ -15,6 +15,8 @@ export default () => (
     </section>
     <Switch>
       <Route path="/search" component={() => null} />
+      <Route path="/signup" component={() => null} />
+      <Route path="/login" component={() => null} />
       <Route path="/manage" component={ManageTabsContainer} />
       <UserTabsContainer />
     </Switch>
