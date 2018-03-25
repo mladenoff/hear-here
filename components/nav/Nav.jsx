@@ -1,8 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import { withRouter } from 'react-router';
 import { Switch, Route, Link } from 'react-router-dom';
 import UserTabsContainer from './tabs/UserTabsContainer';
 import ManageTabsContainer from './tabs/ManageTabsContainer';
+=======
+import { Switch, Route } from 'react-router-dom';
+import TabsContainer from './tabs/TabsContainer';
+>>>>>>> Add Tabs, BackButton, and Nav Search
 import BackButton from '../shared/BackButton';
 
 class Nav extends React.Component {
@@ -12,7 +17,10 @@ class Nav extends React.Component {
       query: '',
     };
     this.handleChange = this.handleChange.bind(this);
+<<<<<<< HEAD
     this.startSearch = this.startSearch.bind(this);
+=======
+>>>>>>> Add Tabs, BackButton, and Nav Search
   }
 
   handleChange(e) {

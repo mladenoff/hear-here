@@ -1,5 +1,6 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import TabsItem from './TabsItem';
 
 const Tabs = ({ tabs , curr }) => (
@@ -8,6 +9,8 @@ const Tabs = ({ tabs , curr }) => (
       tabs.map(tab => (
         <TabsItem key={tab.route} tab={tab} curr={curr} />
 =======
+=======
+>>>>>>> Add Tabs, BackButton, and Nav Search
 import { Link } from 'react-router-dom';
 
 const Tabs = ({ tabs }) => (
@@ -15,6 +18,9 @@ const Tabs = ({ tabs }) => (
     {
       tabs.map(tab => (
         <Link key={tab.route} to={tab.route}>{tab.name}</Link>
+<<<<<<< HEAD
+>>>>>>> Add Tabs, BackButton, and Nav Search
+=======
 >>>>>>> Add Tabs, BackButton, and Nav Search
       ))
     }
