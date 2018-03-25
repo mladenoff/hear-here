@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import LiveSetlistIndexContainer from './LiveSetlistIndexContainer';
 import UpcomingSetlistIndexContainer from './UpcomingSetlistIndexContainer';
 import SetlistContainer from '../Setlist/SetlistContainer';
+import SignupFormContainer from '../SessionForm/SignupFormContainer';
+import LoginFormContainer from '../SessionForm/LoginFormContainer';
 
 // class Main extends React.Component {
 //   constructor(props) {
@@ -18,6 +20,8 @@ const Main = () => (
       <Route path="/live" component={LiveSetlistIndexContainer} />
       <Route path="/upcoming" component={UpcomingSetlistIndexContainer} />
       <Route path="/setlist/:id" component={SetlistContainer} />
+      <Route path="/login" component={LoginFormContainer} />
+      <Route path="/signup" component={SignupFormContainer} />
     </Switch>
   </div>
 );
