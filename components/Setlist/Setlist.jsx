@@ -7,11 +7,10 @@ class Setlist extends React.Component {
 
     this.state = { loading: true };
 
-    this.visibleSongs = this.visibleSongs.bind(this);
+    // this.visibleSongs = this.visibleSongs.bind(this);
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchSetlist(this.props.match.params.setlistId);
   }
 
@@ -21,9 +20,9 @@ class Setlist extends React.Component {
     }
   }
 
-  visibleSongs() {
-    return this.props.items.slice(this.props.currentSongIdx, this.props.currentSongIdx + 3);
-  };
+  // visibleSongs() {
+  //   return this.props.items.slice(this.props.currentSongIdx);
+  // };
 
   render() {
     if (this.state.loading) return null;
@@ -31,7 +30,7 @@ class Setlist extends React.Component {
     return (
       <div className='setlist-container'>
         {
-          this.visibleSongs().map(
+          this.props.items.map(
             item => <SetlistItem item={item} key={item.id} />
           )
         }

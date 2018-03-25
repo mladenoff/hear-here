@@ -34,7 +34,6 @@ export const setNotPlaying = setlistId => ({
 export const fetchSetlist = setlistId => dispatch => {
   dispatch(startFetchingSetlists());
   return APIUtil.fetchSetlist(setlistId).then(nestedSetlist => {
-    debugger
     dispatch(receiveSetlist(nestedSetlist));
   });
 };
