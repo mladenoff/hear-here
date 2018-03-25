@@ -35,7 +35,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --watch",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "sass": "sass --watch public/css/sass/main.scss:public/css/sass/main.css"
   },
   "repository": {
     "type": "git",

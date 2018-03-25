@@ -3,6 +3,9 @@ import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
 import OT from '@opentok/client';
 import { API_KEY, API_SECRET, TOKEN } from '../../config/config';
 
+const defaultSizing = { width: '100%', height: '100%' };
+
+
 export default class VideoFrame extends React.Component {
   constructor(props) {
     super(props);
@@ -96,28 +99,24 @@ export default class VideoFrame extends React.Component {
     const { error, connection, publishVideo } = this.state;
     // debugger
     return (
-      <div>
-        <div id="sessionStatus">Session Status: {connection}</div>
-        {error ? (
-          <div className="error">
-            <strong>Error:</strong> {error}
-          </div>
-        ) : null}
+      <div style={defaultSizing}>
         <OTSession
+          style={defaultSizing}
           apiKey={API_KEY}
           sessionId={sessionId}
           token={sessionToken}
           onError={this.onSessionError}
           eventHandlers={this.sessionEventHandlers}
         >
-          <button id="videoButton" onClick={this.toggleVideo}>
+          {/*}<button id="videoButton" onClick={this.toggleVideo}>
             {publishVideo ? 'Disable' : 'Enable'} Video
-          </button>
+          </button>*/}
           <OTPublisher
-            properties={{ publishVideo, width: 100, height: 100, }}
+            properties={{ publishVideo, width: '100%', height: '100%' }}
             onPublish={this.onPublish}
             onError={this.onPublishError}
             eventHandlers={this.publisherEventHandlers}
+            className='publisher-window'
           />
         </OTSession>
       </div>

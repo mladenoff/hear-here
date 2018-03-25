@@ -1,0 +1,14 @@
+.setlist-container {
+  width: 40%;
+  height: 100%;
+  background: $eggshell-white;
+}
+
+.song-item {
+  border-top: 1px solid $light-color;
+  border-bottom: 1px solid $light-color;
+  opacity: 60%
+}
+.song-active {
+  opacity: 95%;
+}

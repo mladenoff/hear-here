@@ -1,0 +1,26 @@
+.stream-now-button {
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4a2f83;
+  width: 200px;
+  height: 60px;
+  padding: 7px 20px;
+  /* background: linear-gradient(#4a2f83, #b790be); */
+  background-color: white;
+  border: 1px solid;
+  /* box-shadow: inset 0 1px 1px #b790be; */
+  border-color: #9b95b2;
+  text-align: center;
+  font-family: sans-serif;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+}
+
+.stream-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
