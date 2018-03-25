@@ -9,3 +9,9 @@ export const nowPlayingSelector = (setlists) => {
 
   return filteredLists;
 };
+
+
+export const selectTabPathname = (pathname) => {
+  const params = pathname.split('/');
+  return `/${params[params.length - 1]}`;
+};
