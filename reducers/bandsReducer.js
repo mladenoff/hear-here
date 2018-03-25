@@ -1,4 +1,4 @@
-import { RECEIVE_BANDS } from '../actions/bandActions';
+import { RECEIVE_BANDS, RECEIVE_BAND } from '../actions/bandActions';
 
 const bandsReducer = (state = {}, action) => {
   let newState;
@@ -7,6 +7,9 @@ const bandsReducer = (state = {}, action) => {
     case RECEIVE_BANDS:
       newState = {};
       action.bands.map((band) => { newState[band.id] = band; });
+      return Object.assign({}, state, newState);
+    case RECEIVE_BAND:
+      newState = { [action.band.id]: action.band };
       return Object.assign({}, state, newState);
     default:
       return state;

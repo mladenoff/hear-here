@@ -1,4 +1,4 @@
-import { fetchBands, fetchBand } from '../util/band_api_util';
+import * as APIUtil from '../util/band_api_util';
 
 export const RECEIVE_BANDS = 'RECEIVE_BANDS';
 export const RECEIVE_BAND = 'RECEIVE_BAND';
@@ -13,15 +13,21 @@ export const receiveBand = band => ({
   band,
 });
 
+export const createBand = band => (dispatch) => {
+  APIUtil.createBand(band).then(
+    response => dispatch(receiveBand(response.returning)),
+  );
+};
+
 export const getBands = () => (dispatch) => {
-  fetchBands().then(
+  APIUtil.fetchBands().then(
     bands => dispatch(receiveBands(bands)),
   );
 };
 
-export const getBand = () => (dispatch) => {
-  fetchBand().then(
-    band => dispatch(receiveBand(band)),
+export const getBand = bandId => (dispatch) => {
+  APIUtil.fetchBand(bandId).then(
+    nestedBand => dispatch(receiveBand(nestedBand[0])),
   );
 };
 
@@ -31,4 +37,14 @@ export const getBand = () => (dispatch) => {
 //   managerId: 1,
 //     imgUrl: "asdasdasdasdasd",
 //       name: "band name"
+// }
+
+window.getBand = getBand;
+window.getBands = getBands;
+window.createBand = createBand;
+
+// const band = {
+//   managerId: 1,
+//     imgUrl: '',
+//       name: "ya mama"
 // }
