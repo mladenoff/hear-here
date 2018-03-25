@@ -8,8 +8,10 @@ import Main from './Main';
 const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
-      <Nav />
-      <Main />
+      <div>
+        <Nav />
+        <Main />
+      </div>
     </HashRouter>
   </Provider>
 );
