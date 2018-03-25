@@ -9,10 +9,11 @@ class SetlistForm extends React.Component {
       description: '',
       songs: [],
       newSong: '',
+      bandId: '',
     };
 
     this.handleAddSong = this.handleAddSong.bind(this);
-    this.handleEnterAddSong = this.handleAddSong.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -31,12 +32,22 @@ class SetlistForm extends React.Component {
     };
   }
 
-  handleAddSong() {
+  handleAddSong(e) {
+    e.preventDefault();
     this.setState({
       songs: this.state.songs.concat(this.state.newSong),
     });
     this.setState({ newSong: '' });
     this.textInput.focus();
+  }
+
+  handleRemoveSong(e) {
+    e.preventDefault();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createSetlist(this.state);
   }
 
   // handleEnterAddSong(e) {
@@ -56,10 +67,12 @@ class SetlistForm extends React.Component {
     return (
       <form>
         <select value={this.state.bandId} onChange={this.update('bandId')}>
-          {this.state.bands.map((band) => (
+          <option selected>SELECT YOUR BAND</option>
+          {this.props.userBands.map((band) => (
             <option value={band.id}>{band.name}</option>
           ))}
         </select>
+        <br />
         <input
           type="text"
           value={this.state.name}
@@ -74,7 +87,7 @@ class SetlistForm extends React.Component {
           onChange={this.update('description')}
         />
         <br/>
-        Songs
+        Setlist
         <br />
         {this.state.songs.map((song, index) => (
           <div key={index}>
@@ -82,7 +95,7 @@ class SetlistForm extends React.Component {
               value={this.state.songs[index]}
               onChange={this.handleSongUpdate(index)}
             />
-            <button>-</button>
+            <button onClick={this.handleRemoveSong}>-</button>
             <br />
           </div>
         ))}
@@ -91,11 +104,10 @@ class SetlistForm extends React.Component {
           value={this.state.newSong}
           onChange={this.update('newSong')}
           ref={(input) => { this.textInput = input; }}
-          // onKeyDown={this.handleEnterAddSong}
         />
         <button onClick={this.handleAddSong}>+</button>
         <br />
-        <button>
+        <button onClick={this.handleSubmit}>
           Submit
         </button>
       </form>

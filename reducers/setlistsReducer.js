@@ -21,14 +21,14 @@ const setlistsReducer = (state = initialState, action) => {
       newState.loading = true;
       return newState;
     case RECEIVE_SETLISTS:
-      action.setlists.map((setlist) => { newState[setlist.id] = setlist; });
+      action.setlists.map((setlist) => { newState.entities[setlist.id] = setlist; });
       return newState;
     case RECEIVE_SETLIST:
       newState.entities[action.setlist.id] = action.setlist;
       newState.loading = false;
       return newState;
     case SET_AS_PLAYING:
-      newState = { [action.setlistId]: { nowPlaying: true } };
+      newState = {entities: {[action.setlistId]: { nowPlaying: true }} };
       return _.merge({}, state, newState);
     case SET_NOT_PLAYING:
       newState = { [action.setlistId]: { nowPlaying: false } };

@@ -29,29 +29,26 @@ export const setListFilter = (setlist) => {
     'name',
     'description',
     'scheduled_date',
-    'band_id',
+    'bandId',
   ];
 
   const filtered = Object.keys(setlist)
     .filter(key => allowed.includes(key))
     .reduce((obj, key) => {
-      return {
-        ...obj,
-        [key]: setlist[key],
-      };
+      obj[key] = setlist[key];
+      return obj;
     }, {});
-
   return filtered;
 };
 
 export const formatSongsArray = (setlist, setlistId) => (
-  setlist.songs.map((songName, index) => ({
-    name: songName,
+  setlist.songs.map((title, index) => ({
+    title,
     ord: index,
-    setlistId,
+    setlist_id: setlistId,
   }))
 );
 
 export const filterManagerBands = (bands, managerId) => (
-  _.filter(bands, { managerId })
+  _.filter(bands, { manager_id: managerId })
 );

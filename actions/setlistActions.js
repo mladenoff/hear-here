@@ -49,15 +49,15 @@ export const fetchSetlists = () => (dispatch) => {
 export const createSetlist = setlist => (dispatch) => {
   return APIUtil.createSetlist(setListFilter(setlist)).then(
     (nestedSetlist) => {
-      dispatch(receiveSetlist(nestedSetlist));
+      dispatch(receiveSetlist(nestedSetlist.returning));
 
-      const setlistId = nestedSetlist[0].id;
+      const setlistId = nestedSetlist.returning[0].id;
 
       const formattedSongsArray = formatSongsArray(// make a selector!!!
         setlist,
         setlistId,
       );
-
+      debugger
       dispatch(createSongs(formattedSongsArray)); // TODO: make this action!!!
     },
   );

@@ -7,7 +7,7 @@ import { upcomingSelector } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   bands: state.bands,
-  setlists: upcomingSelector(state.setlists),
+  setlists: upcomingSelector(state.setlists.entities),
 });
 
 const mapDispatchToProps = dispatch => ({

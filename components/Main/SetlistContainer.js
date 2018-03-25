@@ -17,7 +17,7 @@ const nowPlayingSelector = (setlists) => {
 
 const mapStateToProps = state => ({
   bands: state.bands,
-  setlists: nowPlayingSelector(state.setlists),
+  setlists: nowPlayingSelector(state.setlists.entities),
 });
 
 export default withRouter(connect(mapStateToProps)(Setlist));

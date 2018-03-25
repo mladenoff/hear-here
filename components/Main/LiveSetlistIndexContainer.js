@@ -7,7 +7,7 @@ import { nowPlayingSelector } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   bands: state.bands,
-  setlists: nowPlayingSelector(state.setlists),
+  setlists: nowPlayingSelector(state.setlists.entities),
 });
 
 const mapDispatchToProps = dispatch => ({

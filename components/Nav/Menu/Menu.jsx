@@ -19,7 +19,10 @@ class Menu extends React.Component {
 
   render() {
     const managerLink = this.props.isManager ? (
+      <div>
       <Link className="modal-option" to="/manage/upcoming">Manage your streams</Link>
+      <Link className="modal-option" to="/manage/create">Schedule a new stream</Link>
+      </div>
     ) : '';
 
     const modalToggle = this.state.modalOpen ? '' : 'modal-closed';

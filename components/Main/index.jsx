@@ -4,17 +4,17 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import LiveSetlistIndexContainer from './LiveSetlistIndexContainer';
 import UpcomingSetlistIndexContainer from './UpcomingSetlistIndexContainer';
 import SetlistContainer from '../Setlist/SetlistContainer';
+import SetlistFormContainer from '../SetlistForm/SetlistFormContainer';
 import SignupFormContainer from '../Session/SignupFormContainer';
 import LoginFormContainer from '../Session/LoginFormContainer';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 // import SearchResultsContainer from '../SearchResults/SearchResultsContainer';
 import StreamPortal from '../Portal/StreamPortal';
-import SetlistFormContainer from '../Dashboard/SetlistFormContainer';
 
 const Main = () => (
   <div>
-    <SetlistFormContainer />
     <Switch>
+      <Route path="/manage/create" component={SetlistFormContainer} />
       <Route path="/live" component={LiveSetlistIndexContainer} />
       <Route path="/upcoming" component={UpcomingSetlistIndexContainer} />
       {/* <Route path="/setlist/:id" component={SetlistContainer} /> */}

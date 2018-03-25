@@ -13,6 +13,6 @@ export const updateActiveSong = songId => ({
 
 export const createSongs = formattedSongsArray => (dispatch) => {
   return APIUtil.createSongs(formattedSongsArray).then(
-    songs => dispatch(receiveSongs(songs)),
+    response => dispatch(receiveSongs(response.returning)),
   );
 };
