@@ -67,17 +67,17 @@ class SetlistForm extends React.Component {
           onChange={this.update('name')}
         />
         <br/>
-        <input
-          type="textarea"
+        <textarea
           value={this.state.description}
           placeholder="DESCRIBE YOUR EVENT..."
           onChange={this.update('description')}
+          rows="3"
         />
         <br/>
         Setlist
         <br />
         {this.state.songs.map((song, index) => (
-          <div key={index}>
+          <label htmlFor="add-song" className="box-holder" key={index}>
             <input
               value={this.state.songs[index]}
               onChange={this.handleSongUpdate(index)}
@@ -90,7 +90,7 @@ class SetlistForm extends React.Component {
               -
             </button>
             <br />
-          </div>
+          </label>
         ))}
         <label htmlFor="add-song" className="box-holder">
           <input
@@ -103,8 +103,8 @@ class SetlistForm extends React.Component {
           <button onClick={this.handleAddSong} className="form-button add">+</button>
         </label>
         <br />
-        <button onClick={this.handleSubmit}>
-          Submit
+        <button onClick={this.handleSubmit} className="submit-form add">
+          SUBMIT
         </button>
       </form>
     );

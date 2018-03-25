@@ -2,7 +2,8 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  font: sans-serif;
+  font-family: $san-serif-font;
+  padding: 5vw;
 }
 
 .box-holder {
@@ -15,6 +16,13 @@
   color: $white;
   flex: 1;
 }
+
+.submit-form {
+  background-color: $light-color;  
+  padding: 10px;
+}
+
+
 .remove {
   background-color: $light-color;
   color: $white;
