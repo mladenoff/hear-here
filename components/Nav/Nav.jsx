@@ -36,17 +36,19 @@ class Nav extends React.Component {
     return (
       <header>
         <section className="upper-nav">
-          <Link to="/live" className="upper-left-nav-container">
+          <div className="upper-left-nav-container">
             <Switch>
               <Route
                 path="/search"
                 component={BackButton} />
-              <img
-                className="logo"
-                src="./assets/music.png"
-                alt="music logo" />
+              <Link to="/live" >
+                <img
+                  className="logo"
+                  src="./assets/music.png"
+                  alt="music logo" />
+              </Link>
             </Switch>
-          </Link>
+          </div>
           <input
             type="text"
             onChange={this.handleChange}
