@@ -1,12 +1,12 @@
-var url = "https://data.blockbusting65.hasura-app.io/v1/query/";
+let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
 
  export const createBand = (band) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 623d47eddd9ad2d0d29b460a3b0a334a89eb180f1a94c6f3"
-    }
+    },
+    "credentials": "include"
   };
 
   let body = {
@@ -45,8 +45,8 @@ var url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     "method": "POST",
     "headers": {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 623d47eddd9ad2d0d29b460a3b0a334a89eb180f1a94c6f3"
-    }
+    },
+    "credentials": "include"
   };
 
   let body = {
@@ -83,8 +83,8 @@ var url = "https://data.blockbusting65.hasura-app.io/v1/query/";
     "method": "POST",
     "headers": {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 623d47eddd9ad2d0d29b460a3b0a334a89eb180f1a94c6f3"
-    }
+    },
+    "credentials": "include"
   };
 
   let body = {
