@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import UserTabsContainer from './tabs/UserTabsContainer';
 import ManageTabsContainer from './tabs/ManageTabsContainer';
 import BackButton from '../shared/BackButton';
@@ -34,27 +34,35 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <nav>
-        <Switch>
-          <Route
-            path="/search"
-            component={BackButton} />
-          <img
-            className="logo"
-            src="./assets/music.png"
-            alt="music logo" />
-        </Switch>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          onFocus={this.startSearch}
-          value={this.state.query} />
+      <header>
+        <section className="upper-nav">
+          <Link to="/live" className="upper-left-nav-container">
+            <Switch>
+              <Route
+                path="/search"
+                component={BackButton} />
+              <img
+                className="logo"
+                src="./assets/music.png"
+                alt="music logo" />
+            </Switch>
+          </Link>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            onFocus={this.startSearch}
+            placeholder="Search"
+            value={this.state.query} />
+          <div className="menu-container">
+          |||
+          </div>
+        </section>
         <Switch>
           <Route path="/search" component={() => null} />
           <Route path="/manage" component={ManageTabsContainer} />
           <UserTabsContainer />
         </Switch>
-      </nav>
+      </header>
     );
   }
 }

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Tabs from './Tabs';
+import { selectTabPathname } from '../../../reducers/selectors';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state, ownProps) => ({
   tabs: [
     {
       name: 'Live',
@@ -12,6 +14,7 @@ const mapStateToProps = () => ({
       route: '/upcoming',
     },
   ],
+  curr: selectTabPathname(ownProps.location.pathname),
 });
 
-export default connect(mapStateToProps, null)(Tabs);
+export default withRouter(connect(mapStateToProps, null)(Tabs));

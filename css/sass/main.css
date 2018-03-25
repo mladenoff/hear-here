@@ -14,10 +14,11 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
@@ -46,9 +47,44 @@ table {
   border-spacing: 0; }
 
 body {
-  background-color: #DBDBDB; }
+  background-color: #DBDBDB;
+  color: #272838; }
 
-.logo {
-  height: 25px; }
+.upper-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  align-items: center; }
+  .upper-nav .upper-left-nav-container {
+    flex-grow: 1; }
+    .upper-nav .upper-left-nav-container .logo {
+      height: 25px; }
+  .upper-nav input {
+    flex-grow: 5;
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px; }
+  .upper-nav .menu-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end; }
+
+.tabs {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 63px; }
+  .tabs a.tab {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 120px;
+    padding-bottom: 3px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: #272838; }
+  .tabs #selected {
+    border-bottom: 3px solid #8D6B94; }
 
 /*# sourceMappingURL=main.css.map */
