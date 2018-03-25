@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
+  margin-bottom: 5px;
   align-items: center;
 
   .upper-left-nav-container {
@@ -24,6 +25,19 @@
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
+
+    .menu-modal {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      background-color: $light-color;
+    }
+
+    .modal-closed {
+      display: none;
+    }
   }
 }
 
