@@ -14,6 +14,7 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div>
         <Dashboard />
         <VideoFrameContainer />
@@ -23,6 +24,12 @@ const Root = ({ store }) => (
       <Nav />
       <Main />
 >>>>>>> Create Main componenet
+=======
+      <div>
+        <Nav />
+        <Main />
+      </div>
+>>>>>>> Create setlist container
     </HashRouter>
   </Provider>
 );

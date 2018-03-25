@@ -12,10 +12,10 @@ class SetlistIndex extends React.Component {
       <ul>
         eeeeeyyyy
         {this.props.setlists.map(setlist => (
-          <SetlistIndexItem 
-            setlist={setlist} 
-            key={setlist.id} 
-            band={this.props.bands[setlist.bandId]} 
+          <SetlistIndexItem
+            setlist={setlist}
+            key={setlist.id}
+            band={this.props.bands[setlist.bandId]}
           />
         ))}
       </ul>

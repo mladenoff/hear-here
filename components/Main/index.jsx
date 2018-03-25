@@ -3,25 +3,25 @@ import { Switch, Route } from 'react-router-dom';
 
 import LiveSetlistIndexContainer from './LiveSetlistIndexContainer';
 import UpcomingSetlistIndexContainer from './UpcomingSetlistIndexContainer';
-import Setlist from './Setlist';
+import SetlistContainer from './SetlistContainer';
 
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+// class Main extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-  render() {
-    return (
-      <div>
-        HELLO WORLD
-      <Switch>
-          <Route path='/live' comoponent={LiveSetlistIndexContainer} />
-          <Route path='/upcoming' comoponent={UpcomingSetlistIndexContainer} />
-          <Route path='/setlist/:id' Component={Setlist} />
-      </Switch>
-      </div>
-    );
-  }
-}
+//   render() {
+const Main = () => (
+  <div>
+   HELLO WORLD
+    <Switch>
+      <Route path="/live" comoponent={LiveSetlistIndexContainer} />
+      <Route path="/upcoming" comoponent={UpcomingSetlistIndexContainer} />
+      <Route path="/setlist/:id" Component={SetlistContainer} />
+    </Switch>
+  </div>
+);
+//   }
+// }
 
 export default Main;
