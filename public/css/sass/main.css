@@ -63,8 +63,84 @@ button, a, input:focus {
 input[type="submit"]:focus {
   outline: none; }
 
+<<<<<<< HEAD
 .back-arrow {
   height: 25px; }
+=======
+header {
+  box-shadow: 0px 2px 6px -2px #6c6c6c;
+  background-color: #d1d1d1;
+  margin-bottom: 7px; }
+
+.upper-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin-bottom: 5px;
+  align-items: center; }
+  .upper-nav .upper-left-nav-container {
+    flex-grow: 1;
+    margin-right: 2px; }
+    .upper-nav .upper-left-nav-container .logo {
+      height: 25px; }
+  .upper-nav input {
+    flex-grow: 5;
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px;
+    background-color: #f4f4f4; }
+  .upper-nav .menu-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 2px; }
+    .upper-nav .menu-container .menu-button {
+      height: 21px;
+      opacity: 0.9; }
+    .upper-nav .menu-container .menu-modal {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column; }
+      .upper-nav .menu-container .menu-modal .modal-option {
+        padding: 20px;
+        font-size: 16px;
+        padding-left: 53px;
+        border-bottom: 1px solid #d1d1d1;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        color: #151515; }
+      .upper-nav .menu-container .menu-modal #close {
+        display: flex;
+        padding: 25px; }
+    .upper-nav .menu-container .modal-closed {
+      display: none; }
+
+.tabs {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 63px; }
+  .tabs a.tab {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 120px;
+    padding-bottom: 9px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    color: #272838;
+    border-bottom: 2.5px solid #d1d1d1; }
+  .tabs #selected {
+    border-bottom: 2.5px solid #b790be; }
+>>>>>>> Setup subscribe portal
 
 .stream-portal {
   margin: 0 auto;
@@ -116,6 +192,21 @@ input[type="submit"]:focus {
     border-radius: 50%;
     background: #52f971;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+
+.subscribe-portal {
+  height: 100%; }
+
+.current-song-flag {
+  position: absolute;
+  bottom: 10;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #272838;
+  border: 1px solid white;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white; }
 
 .publisher-window {
   width: 100%;
