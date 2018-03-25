@@ -14,8 +14,12 @@ import StreamPortal from '../Portal/StreamPortal';
 =======
 import SearchResultsContainer from '../SearchResults/SearchResultsContainer';
 import PublishPortal from '../Portal/PublishPortal';
+<<<<<<< HEAD
 import SubscribePortal from '../Portal/SubscribePortal';
 >>>>>>> Setup subscribe portal
+=======
+import SubscribePortalContainer from '../Portal/SubscribePortalContainer';
+>>>>>>> Add stream path
 
 const Main = () => (
   <div>
@@ -35,7 +39,7 @@ const Main = () => (
       <Route path="/signup" component={SignupFormContainer} />
       <Route path="/search/" component={SearchResultsContainer} />
       <Route path="/setlist/:setlistId" component={PublishPortal} />
-      <Route path="/streams/:sessionId" component={SubscribePortal} />
+      <Route path="/streams/:sessionId" component={SubscribePortalContainer} />
       <Redirect to='/live' />
 >>>>>>> Setup subscribe portal
     </Switch>

@@ -18,12 +18,11 @@ const otSessionReducer = (state = initialState, action) => {
     case otSessionConstants.RECEIVE_OT_SESSION:
       sessionId = action.data.sessionId;
       sessionToken = action.data.generateToken();
-  
+
       return merge(newState, { sessionId, sessionToken });
     case otSessionConstants.RECEIVE_OT_SESSION_TOKEN:
-      sessionToken = action.data.sessionToken;
-      sessionId = action.data.sessionId;
-      return merge(newState, { sessionToken, sessionId });
+      sessionToken = action.token;
+      return merge(newState, { sessionToken, });
     case otSessionConstants.RECEIVE_OT_SESSION_ERROR:
       newState.errors.push(action.error);
       return newState;

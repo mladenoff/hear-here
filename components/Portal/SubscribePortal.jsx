@@ -10,40 +10,22 @@ class SubscribePortal extends React.Component {
   }
 
   componentDidMount() {
-    debugger
-    const url = `https://api.blockbusting65.hasura-app.io/v1/fetchSession/${this.props.sessionId}`;
-
-    const requestOptions = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    };
-
-    debugger
-    return fetch(url, requestOptions)
-      .then(res => {
-        debugger
-        return res.json();
-      });
-
+    this.props.fetchOTSession(this.props.match.params.sessionId)
+        .then(() => this.setState({ subscribed: true }));
   }
 
   render() {
-    debugger
     if (!this.state.subscribed) return null;
+
     return(
       <div className='stream-portal'>
         <section className='stream-button-container subscribe-portal'>
-          <VideoFrameContainer displayVideo/>
+          <VideoFrameContainer displayVideo isPublisher={false} />
           {/*<CurrentSong />*/}
         </section>
       </div>
     );
   }
 }
-
-// const SubscribePortal = props => {
-// }
 
 export default SubscribePortal;
