@@ -47,21 +47,8 @@ class SetlistForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createSetlist(this.state);
+    this.props.createSetlist(this.state); // TODO: Redirect after this
   }
-
-  // handleEnterAddSong(e) {
-  //   console.log('hello yes here i am');
-  //   console.log(e.keyCode);
-  //   if (e.keyCode === 13) {
-  //     console.log('hello yes also here i am inside');
-  //     // this.setState({
-  //     //   songs: this.state.songs.concat(this.state.newSong),
-  //     // });
-  //     // this.setState({ newSong: '' });
-  //     // this.textInput.focus();
-  //   }
-  // }
 
   render() {
     return (

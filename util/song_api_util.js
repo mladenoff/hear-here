@@ -107,7 +107,14 @@ export const createSongs = (arrayOfSongs) => {
         "type": "insert",
         "args": {
           "table": "songs",
-          "objects": arrayOfSongs
+          "objects": arrayOfSongs,
+          "returning": [
+            "id",
+            "setlist_id",
+            "file_url",
+            "title",
+            "ord"
+          ]
         }
       }
     ]
