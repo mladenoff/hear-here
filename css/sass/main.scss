@@ -1,3 +1,9 @@
 @import 'base/fonts';
 @import 'base/reset';
 @import 'base/colors';
+
+body {
+  background-color: $white;
+}
+
+@import 'nav/nav';
