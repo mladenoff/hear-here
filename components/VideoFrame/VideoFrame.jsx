@@ -1,6 +1,7 @@
 import React from 'react';
 import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
-const OT = require('@opentok/client');
+import OT from '@opentok/client';
+import { API_KEY, API_SECRET, TOKEN } from '../../config/config';
 
 export default class VideoFrame extends React.Component {
   constructor(props) {
@@ -84,16 +85,16 @@ export default class VideoFrame extends React.Component {
 
   // LIFECYCLE METHODS
 
-  componentDidMount() {
-    this.props.createSession();
-  }
+  // componentDidMount() {
+  //   this.props.createSession();
+  // }
 
   render() {
     if (!this.props.displayVideo) return null;
 
-    const { apiKey, sessionId, token } = this.props.credentials;
+    const { sessionId, sessionToken } = this.props;
     const { error, connection, publishVideo } = this.state;
-    
+
     return (
       <div>
         <div id="sessionStatus">Session Status: {connection}</div>
@@ -103,9 +104,9 @@ export default class VideoFrame extends React.Component {
           </div>
         ) : null}
         <OTSession
-          apiKey={apiKey}
+          apiKey={API_KEY}
           sessionId={sessionId}
-          token={token}
+          token={sessionToken}
           onError={this.onSessionError}
           eventHandlers={this.sessionEventHandlers}
         >

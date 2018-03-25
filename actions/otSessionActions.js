@@ -15,8 +15,8 @@ export const receiveOTSessionError = error => ({
 });
 
 export const createOTSession = () => dispatch => {
-  return openTokUtil.createSession().then(({ sessionId }) => {
-    dispatch(receiveOTSession(sessionId));
+  return openTokUtil.createSession().then((session) => {
+    dispatch(receiveOTSession(session));
     dispatch(displayVideo());
   }, (err) => {
     dispatch(receiveOTSessionError(err));

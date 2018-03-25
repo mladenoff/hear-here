@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createOTSession } from '../../actions/otSessionActions';
 
 const Dashboard = props => (
   <button
@@ -9,7 +10,7 @@ const Dashboard = props => (
 )
 
 const mapDispatchToProps = dispatch => ({
-  createSession: () => dispatch(createSession())
+  createSession: () => dispatch(createOTSession())
 })
 
 export default connect(null, mapDispatchToProps)(Dashboard);
