@@ -19,10 +19,9 @@ class Menu extends React.Component {
 
   render() {
     const managerLink = this.props.isManager ? (
-      <Link className="modal-option" to="/manage/create">Schedule a new stream</Link>
-      
+      <Link className="modal-option" to="/manage/upcoming">Manage your streams</Link>
     ) : '';
-  
+
     const managerLink2 = this.props.isManager ? (
       <Link className="modal-option" to="/manage/create">Schedule a new stream</Link>
     ) : '';
