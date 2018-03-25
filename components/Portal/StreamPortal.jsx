@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 const StreamPortal = ({ streaming }) => (
   <div className='stream-portal'>
-    <Setlist />
     <section className='stream-button-container'>
       { streaming
         ?
@@ -15,6 +14,7 @@ const StreamPortal = ({ streaming }) => (
         <StreamButton />
       }
     </section>
+    <Setlist />
   </div>
 );
 
