@@ -5,7 +5,6 @@ export const setAsPlaying = setlistId => ({
   type: SET_AS_PLAYING,
   setlistId,
 });
-
 export const setNotPlaying = setlistId => ({
   type: SET_NOT_PLAYING,
   setlistId,
