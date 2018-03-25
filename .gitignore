@@ -23,6 +23,7 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 config/config.js
+.sass-cache/*
 
 # Ignore application configuration
 /config/application.yml
