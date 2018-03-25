@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import TabsContainer from './tabs/TabsContainer';
+import UserTabsContainer from './tabs/UserTabsContainer';
+import ManageTabsContainer from './tabs/ManageTabsContainer';
 import BackButton from '../shared/BackButton';
 
 class Nav extends React.Component {
@@ -34,7 +35,8 @@ class Nav extends React.Component {
           onChange={this.handleChange}
           value={this.state.query} />
         <Switch>
-          <TabsContainer />
+          <Route path="/manage" component={ManageTabsContainer} />
+          <UserTabsContainer />
         </Switch>
       </nav>
     );
