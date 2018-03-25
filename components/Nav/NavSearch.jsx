@@ -4,15 +4,27 @@ import { withRouter } from 'react-router';
 class NavSearch extends React.Component {
   constructor(props) {
     super(props);
+    let query = '';
+    if (this.props.location.search){
+      query = this.props.location.search.replace('?query=', '');
+
+    }
     this.state = {
-      query: this.input,
+      query
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.startSearch = this.startSearch.bind(this);
   }
 
+  componentDidMount(){
+    if(this.state.query){
+      this.props.search(this.state.query);
+    }
+  }
+
   handleChange(e) {
+
     clearTimeout(this.timeout);
 
     this.setState({ query: e.target.value }, () => {
@@ -20,7 +32,7 @@ class NavSearch extends React.Component {
 
       this.timeout = setTimeout(() => {
         // API Call here
-        console.log(this.state);
+        this.props.search(this.state.query);
       }, 300);
     });
   }

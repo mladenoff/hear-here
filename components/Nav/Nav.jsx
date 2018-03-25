@@ -4,13 +4,13 @@ import UserTabsContainer from './Tabs/UserTabsContainer';
 import ManageTabsContainer from './Tabs/ManageTabsContainer';
 import LeftNav from './LeftNav';
 import MenuContainer from './Menu/MenuContainer';
-import NavSearch from './NavSearch';
+import NavSearchContainer from './NavSearchContainer';
 
 export default () => (
   <header>
     <section className="upper-nav">
       <LeftNav />
-      <NavSearch />
+      <NavSearchContainer />
       <MenuContainer />
     </section>
     <Switch>

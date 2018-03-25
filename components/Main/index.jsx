@@ -7,6 +7,7 @@ import SetlistContainer from '../Setlist/SetlistContainer';
 import SignupFormContainer from '../SessionForm/SignupFormContainer';
 import LoginFormContainer from '../SessionForm/LoginFormContainer';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import SearchResultsContainer from '../SearchResults/SearchResultsContainer';
 
 // class Main extends React.Component {
 //   constructor(props) {
@@ -23,6 +24,7 @@ const Main = () => (
       <Route path="/setlist/:id" component={SetlistContainer} />
       <Route path="/login" component={LoginFormContainer} />
       <Route path="/signup" component={SignupFormContainer} />
+      <Route path="/search/" component={SearchResultsContainer} />
     </Switch>
   </div>
 );
