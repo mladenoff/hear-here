@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default (props) => (
-  props.sessionButtons.map((button) => (
-  <Link className="modal-option" to={button.action} >{button.text}</Link>
+  props.buttons.map((b) => (
+    <button
+      className="modal-option"
+      onClick={props[b.action]}
+    >
+      {b.text}
+    </button>
   ))
 );

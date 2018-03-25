@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import Menu from './Menu';
 
 const mapStateToProps = state => ({
-  isManager: true, // state.session.currentUser.is_manager,
+  isManager: state.session.currentUser && state.session.currentUser.isManager,
 });
 
 export default withRouter(connect(mapStateToProps, null)(Menu));

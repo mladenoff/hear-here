@@ -1,18 +1,21 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import SessionButtons from './SessionButtons';
 import { signup, login, logout } from '../../actions/sessionActions';
 
 const mapStateToProps = (state) => {
-  let sessionButtons;
+  let buttons;
   if (state.session.currentUser) {
-    sessionButtons = [
+    buttons = [
       {
         text: 'Log out',
         action: 'logout',
-      }
+      },
     ];
   } else {
-    sessionButtons = [
+    buttons = [
       {
         text: 'Log in',
         action: 'login',
@@ -24,14 +27,14 @@ const mapStateToProps = (state) => {
     ];
   }
   return ({
-    sessionButtons,
+    buttons,
   });
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  signup: (user) => dispatch(signup(user)),
-  login: (user) => dispatch(login(user)),
+const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: (user) => dispatch(logout(user)),
+  login: () => ownProps.history.push('/login'),
+  signup: () => ownProps.history.push('/signup'),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionButtons);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionButtons));
