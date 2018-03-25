@@ -7,8 +7,17 @@ body {
   color: $black;
 }
 
+input:focus {
+  outline-color: $main-color;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
 @import 'nav/nav';
 @import 'portal/portal';
 @import 'setlist/setlist';
 @import 'video/video';
 @import 'buttons/stream_button';
+@import 'session/session';

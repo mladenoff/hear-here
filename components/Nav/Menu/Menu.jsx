@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SessionButtonsContainer from '../../Session/SessionButtonsContainer';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class Menu extends React.Component {
           {
             managerLink
           }
+          <SessionButtonsContainer />
         </aside>
       </div>
     );
