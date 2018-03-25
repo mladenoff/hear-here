@@ -2,7 +2,7 @@ import React from 'react';
 import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
 const OT = require('@opentok/client');
 
-export default class App extends React.Component {
+export default class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -47,7 +47,7 @@ export default class App extends React.Component {
         console.log('Subscriber video disabled');
       },
     };
-    
+
     this.onSessionError = this.onSessionError.bind(this);
     this.onPublish = this.onPublish.bind(this);
     this.onPublishError = this.onPublishError.bind(this);
@@ -55,6 +55,8 @@ export default class App extends React.Component {
     this.onSubscribeError = this.onSubscribeError.bind(this);
     this.toggleVideo = this.toggleVideo.bind(this);
   }
+
+  // EVENT LISTENERS
 
   onSessionError (error) {
     this.setState({ error });
@@ -80,8 +82,15 @@ export default class App extends React.Component {
     this.setState({ publishVideo: !this.state.publishVideo });
   }
 
+  // LIFECYCLE METHODS
+
+  componentDidMount() {
+    this.props.createSession();
+  }
+
   render() {
-    const { apiKey, sessionId, token } = this.props.credentials;
+    if (this.state) return null;
+    // const { apiKey, sessionId, token } = this.props.credentials;
     const { error, connection, publishVideo } = this.state;
     return (
       <div>
