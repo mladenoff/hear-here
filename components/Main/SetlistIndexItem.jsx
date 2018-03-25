@@ -11,7 +11,7 @@ class SetlistIndexItem extends React.Component {
         <a><img /></a>
         <span>{this.props.setlist.name}</span> <br/>
         <span>{this.props.setlist.description}</span> <br />
-        <span>{this.props.band.name}</span> <br />
+        <span>{this.props.band ? this.props.band.name : null}</span> <br />
         <button>Subscribe</button>
       </li>
     );
