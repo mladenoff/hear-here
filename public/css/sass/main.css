@@ -183,20 +183,20 @@ header {
   justify-content: center;
   align-items: center; }
 
-.login-form {
+.form {
   display: flex;
   flex-direction: column;
   font-size: 16px;
   font-family: Helvetica, sans-serif; }
-  .login-form label {
+  .form label {
     margin: 14px 0 3px 21px; }
-  .login-form input {
+  .form input {
     margin: 0 12px;
     padding: 8px;
     border-radius: 5px;
     border: none;
     font-size: 14px; }
-  .login-form input.session-submit {
+  .form input[type="submit"] {
     margin-top: 18px;
     background-color: #b790be;
     color: #f4f4f4; }
