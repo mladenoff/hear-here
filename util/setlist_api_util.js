@@ -103,7 +103,7 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "scheduled_date"
       ],
       "where": {
-        "bandId": {
+        "band_id": {
           "$eq": bandId
         }
       }
