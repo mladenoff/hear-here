@@ -19,10 +19,12 @@ class Menu extends React.Component {
 
   render() {
     const managerLink = this.props.isManager ? (
-      <div>
-      <Link className="modal-option" to="/manage/upcoming">Manage your streams</Link>
       <Link className="modal-option" to="/manage/create">Schedule a new stream</Link>
-      </div>
+      
+    ) : '';
+  
+    const managerLink2 = this.props.isManager ? (
+      <Link className="modal-option" to="/manage/create">Schedule a new stream</Link>
     ) : '';
 
     const modalToggle = this.state.modalOpen ? '' : 'modal-closed';
@@ -49,6 +51,9 @@ class Menu extends React.Component {
           </Link>
           {
             managerLink
+          }
+          {
+            managerLink2
           }
           <SessionButtonsContainer />
         </aside>
