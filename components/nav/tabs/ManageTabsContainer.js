@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Tabs from './Tabs';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state, ownProps) => ({
   tabs: [
     {
       name: 'Upcoming',
@@ -12,6 +13,7 @@ const mapStateToProps = () => ({
       route: '/manage/past',
     },
   ],
+  curr: ownProps.location.pathname,
 });
 
-export default connect(mapStateToProps, null)(Tabs);
+export default withRouter(connect(mapStateToProps, null)(Tabs));
