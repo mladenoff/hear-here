@@ -60,7 +60,13 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "name",
         "band_id",
         "description",
-        "scheduled_date"
+        "scheduled_date",
+        {
+          "name": "songs",
+          "columns": [
+            "id"
+          ]
+        }
       ],
       "where": {
         "id": {
@@ -100,7 +106,13 @@ let url = "https://data.blockbusting65.hasura-app.io/v1/query/";
         "name",
         "band_id",
         "description",
-        "scheduled_date"
+        "scheduled_date",
+        {
+          "name": "songs",
+          "columns": [
+            "id"
+          ]
+        }
       ],
       "where": {
         "band_id": {
