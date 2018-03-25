@@ -1,0 +1,26 @@
+.setlist-form {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font: sans-serif;
+}
+
+.box-holder {
+  flex-direction: row;
+  display: flex;
+}
+
+.add {
+  background-color: $main-color;
+  color: $white;
+  flex: 1;
+}
+.remove {
+  background-color: $light-color;
+  color: $white;
+  flex: 1;
+}
+
+.song-box {
+  flex: 7;
+}

@@ -52,7 +52,7 @@ class SetlistForm extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className="setlist-form">
         <select value={this.state.bandId} onChange={this.update('bandId')}>
           <option selected>SELECT YOUR BAND</option>
           {this.props.userBands.map((band) => (
@@ -81,18 +81,27 @@ class SetlistForm extends React.Component {
             <input
               value={this.state.songs[index]}
               onChange={this.handleSongUpdate(index)}
+              className="song-box"
             />
-            <button onClick={this.handleRemoveSong}>-</button>
+            <button 
+              onClick={this.handleRemoveSong}
+              className="form-button remove"
+            >
+              -
+            </button>
             <br />
           </div>
         ))}
-        <input
-          type="text"
-          value={this.state.newSong}
-          onChange={this.update('newSong')}
-          ref={(input) => { this.textInput = input; }}
-        />
-        <button onClick={this.handleAddSong}>+</button>
+        <label htmlFor="add-song" className="box-holder">
+          <input
+            type="text"
+            value={this.state.newSong}
+            onChange={this.update('newSong')}
+            ref={(input) => { this.textInput = input; }}
+            className="song-box"
+          />
+          <button onClick={this.handleAddSong} className="form-button add">+</button>
+        </label>
         <br />
         <button onClick={this.handleSubmit}>
           Submit
