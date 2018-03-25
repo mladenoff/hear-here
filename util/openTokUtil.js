@@ -1,32 +1,102 @@
 import OpenTok from 'opentok';
-import {
-  API_KEY,
-  API_SECRET
-} from '../config/config';
+const CUSTOM_API_ENDPOINT = "https://api.blockbusting65.hasura-app.io/v1";
 
 export const createSession = () => {
-  const ot = new OpenTok(API_KEY, API_SECRET);
+  let url = `${CUSTOM_API_ENDPOINT}/createTokSession`;
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
 
-  return new Promise((resolve, reject) => {
-    return ot.createSession((err, session) => {
-      if (err) return reject(err);
 
-      resolve(session);
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
     });
-  });
 };
 
 export const fetchSession = (sessionId) => {
-  const ot = new OpenTok(API_KEY, API_SECRET);
+  let url = `${CUSTOM_API_ENDPOINT}/fetchSession/${sessionId}`;
+  let requestOptions = {
+    "method": "GET",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
 
-  return new Promise((resolve, reject) => {
-    const newToken = ot.generateToken(sessionId);
 
-    if (typeof newToken === 'string') resolve(newToken);
-    else reject('Could not join');
-  });
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
 };
 
-export const createArchive = () => {
+export const createArchive = (sessionId, songTitle) => {
+  let url = `${CUSTOM_API_ENDPOINT}/createArchive/${sessionId}/${songTitle}`;
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
 
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
+export const getArchive = (archiveId) => {
+  let url = `${CUSTOM_API_ENDPOINT}/getArchive/${archiveId}`;
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
+
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
+};
+
+export const stopArchive = ( archiveId ) => {
+  let url = `${CUSTOM_API_ENDPOINT}/stopArchive/${archiveId}`;
+  let requestOptions = {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+    },
+    "credentials": "include"
+  };
+
+
+  return fetch(url, requestOptions)
+    .then(function (response) {
+      return response.json();
+    })
+    .catch(function (error) {
+      console.log('Request Failed:' + error);
+    });
 };
