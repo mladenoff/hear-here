@@ -44,7 +44,7 @@ header {
       left: 0px;
       width: 100vw;
       height: 100vh;
-      background-color: $gray;
+      background-color: $white;
       display: flex;
       flex-direction: column;
 
@@ -54,6 +54,7 @@ header {
         padding-left: 53px;
         border-bottom: 1px solid $gray;
         font-family: $san-serif-font;
+        font-weight: bold;
         text-decoration: none;
         color: $black;
       }
