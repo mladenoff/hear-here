@@ -55,6 +55,11 @@ class SetlistForm extends React.Component {
   render() {
     return (
       <form>
+        <select value={this.state.bandId} onChange={this.update('bandId')}>
+          {this.state.bands.map((band) => (
+            <option value={band.id}>{band.name}</option>
+          ))}
+        </select>
         <input
           type="text"
           value={this.state.name}

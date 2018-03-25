@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const nowPlayingSelector = (setlists) => {
   const filteredLists = [];
 
@@ -48,4 +50,8 @@ export const formatSongsArray = (setlist, setlistId) => (
     ord: index,
     setlistId,
   }))
+);
+
+export const filterManagerBands = (bands, managerId) => (
+  _.filter(bands, { managerId })
 );

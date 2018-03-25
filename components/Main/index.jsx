@@ -9,11 +9,11 @@ import LoginFormContainer from '../Session/LoginFormContainer';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 // import SearchResultsContainer from '../SearchResults/SearchResultsContainer';
 import StreamPortal from '../Portal/StreamPortal';
-import SetlistForm from '../Dashboard/SetlistForm';
+import SetlistFormContainer from '../Dashboard/SetlistFormContainer';
 
 const Main = () => (
   <div>
-    <SetlistForm />
+    <SetlistFormContainer />
     <Switch>
       <Route path="/live" component={LiveSetlistIndexContainer} />
       <Route path="/upcoming" component={UpcomingSetlistIndexContainer} />
