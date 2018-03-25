@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import session from './sessionReducer';
+import otSession from './otSessionReducer';
 import ui from './uiReducer';
 
 export default combineReducers({
-  session,
+  otSession,
   ui,
 });

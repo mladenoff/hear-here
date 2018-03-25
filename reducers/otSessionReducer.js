@@ -7,7 +7,7 @@ const initialState = {
   errors: [],
 };
 
-const sessionReducer = (state = initialState, action) => {
+const otSessionReducer = (state = initialState, action) => {
   Object.freeze(state);
   const newState = merge({}, state);
 
@@ -24,4 +24,4 @@ const sessionReducer = (state = initialState, action) => {
   }
 };
 
-export default sessionReducer;
+export default otSessionReducer;
