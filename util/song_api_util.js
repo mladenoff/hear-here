@@ -81,7 +81,7 @@ const fetchSong = (id) => {
     });
 };
 
-const fetchSetlists = (setlistId) => {
+const fetchSongs = (setlistId) => {
   let requestOptions = {
     "method": "POST",
     "headers": {
