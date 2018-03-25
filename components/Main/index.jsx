@@ -6,6 +6,7 @@ import UpcomingSetlistIndexContainer from './UpcomingSetlistIndexContainer';
 import SetlistContainer from '../Setlist/SetlistContainer';
 import SignupFormContainer from '../SessionForm/SignupFormContainer';
 import LoginFormContainer from '../SessionForm/LoginFormContainer';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 // class Main extends React.Component {
 //   constructor(props) {
