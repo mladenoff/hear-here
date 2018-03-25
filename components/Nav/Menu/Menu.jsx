@@ -35,6 +35,11 @@ class Menu extends React.Component {
           <div>
             X
           </div>
+          <div className="username">
+            {
+              this.props.username 
+            }
+          </div>
           </button>
           <Link className="modal-option" to="/live">
             View other streams
