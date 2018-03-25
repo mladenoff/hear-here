@@ -93,7 +93,11 @@ header {
       left: 0px;
       width: 100vw;
       height: 100vh;
+<<<<<<< HEAD
       background-color: #f4f4f4;
+=======
+      background-color: #d1d1d1;
+>>>>>>> Style setlist items
       display: flex;
       flex-direction: column; }
       .upper-nav .menu-container .menu-modal .modal-option {
@@ -102,7 +106,10 @@ header {
         padding-left: 53px;
         border-bottom: 1px solid #d1d1d1;
         font-family: Helvetica, sans-serif;
+<<<<<<< HEAD
         font-weight: bold;
+=======
+>>>>>>> Style setlist items
         text-decoration: none;
         color: #151515; }
       .upper-nav .menu-container .menu-modal #close {
@@ -134,6 +141,7 @@ header {
 .stream-portal {
   margin: 0 auto;
   margin-top: 30px;
+<<<<<<< HEAD
   width: 70vw;
   height: 70vh;
   display: flex;
@@ -150,6 +158,43 @@ header {
   border-top: 1px solid #b790be;
   border-bottom: 1px solid #b790be;
   opacity: 60%; }
+=======
+  width: 85vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 1px 1px #d1d1d1 inset; }
+
+.setlist-container {
+  width: 100%;
+  height: 40%;
+  background: #D1D1D1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.setlist-item {
+  border: 1px solid white;
+  border-top: none;
+  color: #D1D1D1;
+  background: #272838;
+  opacity: 60%;
+  padding: 18px 0;
+  width: 95%;
+  border-radius: 3px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  transform: scale(1);
+  transition-duration: .5s; }
+  .setlist-item:hover {
+    transform: scale(1.01);
+    transition-duration: .5s; }
+>>>>>>> Style setlist items
 
 .song-active {
   opacity: 95%; }
@@ -157,6 +202,12 @@ header {
 .publisher-window {
   width: 100%;
   height: 100%; }
+<<<<<<< HEAD
+=======
+  .publisher-window div {
+    width: 100%;
+    height: 100%; }
+>>>>>>> Style setlist items
 
 .stream-now-button {
   border-radius: 5px;
@@ -168,6 +219,7 @@ header {
   padding: 7px 20px;
   /* background: linear-gradient(#4a2f83, #b790be); */
   background-color: white;
+<<<<<<< HEAD
   border: 1px solid;
   /* box-shadow: inset 0 1px 1px #b790be; */
   border-color: #9b95b2;
@@ -175,28 +227,59 @@ header {
   font-family: sans-serif;
   /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); */
   cursor: pointer; }
+=======
+  /* box-shadow: inset 0 1px 1px #b790be; */
+  text-align: center;
+  font-family: sans-serif;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); */
+  cursor: pointer;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px; }
+  .stream-now-button:hover {
+    border: 1px solid;
+    border-color: #9b95b2; }
+>>>>>>> Style setlist items
 
 .stream-button-container {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   width: 60%;
   justify-content: center;
   align-items: center; }
 
 .form {
+=======
+  width: 100%;
+  height: 60%;
+  justify-content: center;
+  align-items: center; }
+
+.login-form {
+>>>>>>> Style setlist items
   display: flex;
   flex-direction: column;
   font-size: 16px;
   font-family: Helvetica, sans-serif; }
+<<<<<<< HEAD
   .form label {
     margin: 14px 0 3px 21px; }
   .form input {
+=======
+  .login-form label {
+    margin: 14px 0 3px 21px; }
+  .login-form input {
+>>>>>>> Style setlist items
     margin: 0 12px;
     padding: 8px;
     border-radius: 5px;
     border: none;
     font-size: 14px; }
+<<<<<<< HEAD
   .form input[type="submit"] {
+=======
+  .login-form input.session-submit {
+>>>>>>> Style setlist items
     margin-top: 18px;
     background-color: #b790be;
     color: #f4f4f4; }
