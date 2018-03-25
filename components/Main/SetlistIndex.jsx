@@ -10,7 +10,6 @@ class SetlistIndex extends React.Component {
   componentDidMount() {
     this.props.fetchBands();
     this.props.fetchSetlists().then(() => this.props.setAsPlaying(4));
-    debugger
   }
 
   render() {

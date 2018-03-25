@@ -5,11 +5,20 @@ class SetlistIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.conditionalWatch = this.conditionalWatch.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
-      debugger
+  }
+
+  conditionalWatch() {
+    if(this.props.joinSession) {
+      return (
+      <button onClick={this.handleClick}>Watch Here</button>
+      );
+    }
+
   }
 
   render() {
@@ -20,7 +29,7 @@ class SetlistIndexItem extends React.Component {
         <span>{this.props.setlist.name}</span> <br/>
         <span>{this.props.setlist.description}</span> <br />
         <span>{this.props.band ? this.props.band.name : null}</span> <br />
-        <button onClick={this.handleClick}>Watch Here</button>
+        {this.conditionalWatch()}
         </Link>
       </li>
     );
