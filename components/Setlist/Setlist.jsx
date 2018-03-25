@@ -6,6 +6,8 @@ class Setlist extends React.Component {
     super(props);
 
     this.state = { loading: true };
+
+    this.visibleSongs = this.visibleSongs.bind(this);
   }
 
   componentDidMount() {
@@ -19,14 +21,17 @@ class Setlist extends React.Component {
     }
   }
 
+  visibleSongs() {
+    return this.props.items.slice(this.props.currentSongIdx, this.props.currentSongIdx + 3);
+  };
+
   render() {
     if (this.state.loading) return null;
-    debugger
 
     return (
       <div className='setlist-container'>
         {
-          this.props.items.map(
+          this.visibleSongs().map(
             item => <SetlistItem item={item} key={item.id} />
           )
         }

@@ -4,7 +4,8 @@ import { combineReducers } from 'redux';
 import otSession from './otSessionReducer';
 
 const initialState = {
-  displayVideo: false
+  displayVideo: false,
+  activeSongId: null,
 };
 
 const display = (state = initialState, action) => {

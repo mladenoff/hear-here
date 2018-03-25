@@ -18,11 +18,13 @@ const nowPlayingSelector = (setlists) => {
 const mapStateToProps = (state, ownProps) => {
   const setlist = state.setlists.entities[ownProps.match.params.setlistId];
   const songs = (setlist && setlist.songs.map(song => song.id)) || [];
+  const currentSongIdx = songs.indexOf(state.ui.display.activeSongId);
 
   return {
     loading: state.setlists.loading,
     setlist: setlist || {},
-    items: songs.map(id => state.songs[id])
+    items: songs.map(id => state.songs[id]),
+    currentSongIdx: (currentSongIdx >= 0 ? currentSongIdx : 0)
   };
 };
 
