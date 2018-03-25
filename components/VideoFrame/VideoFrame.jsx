@@ -95,9 +95,9 @@ export default class VideoFrame extends React.Component {
   render() {
     if (!this.props.displayVideo) return null;
 
-    const { sessionId, sessionToken } = this.props;
+    const { sessionId, sessionToken, isPublisher } = this.props;
     const { error, connection, publishVideo } = this.state;
-    
+
     return (
       <div style={defaultSizing} className='publisher-window'>
         <OTSession
@@ -111,12 +111,24 @@ export default class VideoFrame extends React.Component {
           {/*}<button id="videoButton" onClick={this.toggleVideo}>
             {publishVideo ? 'Disable' : 'Enable'} Video
           </button>*/}
-          <OTPublisher
-            properties={{ publishVideo, width: '100%', height: '100%' }}
-            onPublish={this.onPublish}
-            onError={this.onPublishError}
-            eventHandlers={this.publisherEventHandlers}
-          />
+          { isPublisher
+            ?
+            <OTPublisher
+              properties={{ publishVideo, width: '100%', height: '100%' }}
+              onPublish={this.onPublish}
+              onError={this.onPublishError}
+              eventHandlers={this.publisherEventHandlers}
+            />
+            :
+            <OTStreams>
+              <OTSubscriber
+                properties={{ width: '100%', height: '100%' }}
+                onSubscribe={this.onSubscribe}
+                onError={this.onSubscribeError}
+                eventHandlers={this.subscriberEventHandlers}
+                />
+            </OTStreams>
+          }
         </OTSession>
       </div>
     );

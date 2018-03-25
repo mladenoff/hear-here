@@ -1,5 +1,4 @@
 import React from 'react';
-
 import SetlistIndexItem from './SetlistIndexItem';
 
 class SetlistIndex extends React.Component {
@@ -15,6 +14,7 @@ class SetlistIndex extends React.Component {
   render() {
     if (this.props.setlists && this.props.bands) {
       return (
+        <div>
         <ul>
           {this.props.setlists.map(setlist => (
             <SetlistIndexItem
@@ -24,6 +24,8 @@ class SetlistIndex extends React.Component {
             />
           ))}
         </ul>
+        <button onClick={() => this.props.history.push('/streams/2_MX40NjA4Njg0Mn5-MTUyMjAxMDMxNzI4NH45OWdTR3VYWFNnTGJZV1U5QjIzc2I1SER-UH4')}>Join a random stream</button>
+        </div>
       );
     }
     return null;

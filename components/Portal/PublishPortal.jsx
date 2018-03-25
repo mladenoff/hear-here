@@ -9,7 +9,7 @@ const StreamPortal = ({ streaming }) => (
     <section className='stream-button-container'>
       { streaming
         ?
-        <VideoFrameContainer />
+        <VideoFrameContainer isPublisher/>
         :
         <StreamButton />
       }

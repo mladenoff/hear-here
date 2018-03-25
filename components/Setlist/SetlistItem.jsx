@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 // SELECTOR
 const isActive = (state, songId) => {
-  debugger
   return state.ui.display.activeSongId === songId;
 }
 
@@ -25,7 +24,6 @@ const SetlistItem = ({ updateActiveSong, isActive, item: song }) => {
 
   if (isActive) className += ' song-active';
 
-  debugger
   return (
     <div
       className={className}
