@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 const mapStateToProps = (state, ownProps) => ({
   tabs: [
     {
-      name: 'Live Now',
+      name: 'Live',
       route: '/live',
     },
     {
