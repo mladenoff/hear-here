@@ -14,12 +14,12 @@ import StreamPortal from '../Portal/StreamPortal';
 const Main = () => (
   <div>
     <Switch>
-      <Route path="/manage/create" component={SetlistFormContainer} />
+      <ProtectedRoute path="/manage/create" component={SetlistFormContainer} />
       <Route path="/live" component={LiveSetlistIndexContainer} />
       <Route path="/upcoming" component={UpcomingSetlistIndexContainer} />
       {/* <Route path="/setlist/:id" component={SetlistContainer} /> */}
-      <Route path="/login" component={LoginFormContainer} />
-      <Route path="/signup" component={SignupFormContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
       {/* <Route path="/search/" component={SearchResultsContainer} /> */}
       <Route path="/setlist/:setlistId" component={StreamPortal} />
       {/* <Redirect to='/live' /> */}

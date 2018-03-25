@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  logout: (user) => dispatch(logout(user)),
+  logout: (user) => dispatch(logout(user)).then(() => ownProps.history.push('/login')),
   login: () => ownProps.history.push('/login'),
   signup: () => ownProps.history.push('/signup'),
 });
