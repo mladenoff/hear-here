@@ -20,7 +20,7 @@ const Main = () => (
       <Route path="/signup" component={SignupFormContainer} />
       <Route path="/search/" component={SearchResultsContainer} />
       <Route path="/setlist/:setlistId" component={StreamPortal} />
-      <Redirect to='/live' />
+      {/* <Redirect to='/live' /> */}
     </Switch>
   </div>
 );
