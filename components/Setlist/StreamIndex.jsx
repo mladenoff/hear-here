@@ -8,18 +8,31 @@ class StreamIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchBands();
     this.props.fetchStreams();
+    this.props.fetchSetlists();
   }
 
   render() {
-    console.log(this.props.streams);
+    console.log(this.props);
+    let setlist;
+    let band;
+    this.props.streams.forEach(stream => {
+      setlist = this.props.setlists[stream.setlist_id];
+      if (setlist) {
+        band = this.props.bands[setlist.band_id] || {name: ""};
+      } else {
+        setlist = {name: "" };
+      }
+    });
       return (
         <div>
         <ul>
           {this.props.streams.map(stream => (
           <li className="set-list-item">
           <Link to={`/streams/${stream.session_id}`}>
-            Stream
+            {band ? band.name : null}
+            {setlist ? setlist.name : null}
           </Link>
         </li>
           ))}
