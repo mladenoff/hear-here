@@ -1,19 +1,16 @@
 import { connect } from 'react-redux';
 
-import SetlistIndex from '../Setlist/SetlistIndex';
-import { fetchSetlists, setAsPlaying } from '../../actions/setlistActions';
-import { fetchBands } from '../../actions/bandActions';
+import StreamIndex from '../Setlist/StreamIndex';
+import { fetchStreams } from '../../actions/activeStreamActions';
 import { nowPlayingSelector } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  bands: state.bands,
-  setlists: nowPlayingSelector(state.setlists.entities),
+  streams: state.streams,
+  setlists: state.setlists
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchSetlists: () => dispatch(fetchSetlists()),
-  fetchBands: () => dispatch(fetchBands()),
-  setAsPlaying: setlistId => dispatch(setAsPlaying(setlistId)),
+  fetchStreams: () => dispatch(fetchStreams()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetlistIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(StreamIndex);
