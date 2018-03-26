@@ -1,5 +1,6 @@
 import * as openTokUtil from '../util/openTokUtil';
 import { displayVideo } from './uiActions';
+import { createStream } from './activeStreamActions';
 
 export const otSessionConstants = {
   RECEIVE_OT_SESSION: 'RECEIVE_OT_SESSION',
@@ -12,7 +13,6 @@ export const receiveOTSession = data => ({
 });
 
 export const receiveOTSessionToken = token => {
-  debugger
   return {
     type: otSessionConstants.RECEIVE_OT_SESSION_TOKEN, token
   };
@@ -23,9 +23,10 @@ export const receiveOTSessionError = error => ({
 });
 
 export const createOTSession = () => dispatch => {
-  return openTokUtil.createSession().then((session) => {
-    dispatch(receiveOTSession(session));
+  return openTokUtil.createSession().then(({ token, sessionId }) => {
+    dispatch(receiveOTSession({ token, sessionId }));
     dispatch(displayVideo());
+    return { sessionId };
   }, (err) => {
     dispatch(receiveOTSessionError(err));
   });
@@ -41,7 +42,6 @@ export const fetchOTSession = sessionId => dispatch => {
     }
   };
 
-  debugger
   return fetch(url, requestOptions)
     .then(res => {
       return res.json();

@@ -20,7 +20,7 @@ class SubscribePortal extends React.Component {
     return(
       <div className='stream-portal'>
         <section className='stream-button-container subscribe-portal'>
-          <VideoFrameContainer displayVideo isPublisher={false} />
+          <VideoFrameContainer displayVideo />
           {/*<CurrentSong />*/}
         </section>
       </div>

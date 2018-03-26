@@ -98,12 +98,11 @@ export default class VideoFrame extends React.Component {
 
   render() {
     if (!this.props.displayVideo) return null;
-
     const { sessionId, sessionToken, isPublisher } = this.props;
     const { error, connection, publishVideo } = this.state;
 
     return (
-      <div style={defaultSizing} className='publisher-window'>
+      <div className='publisher-window'>
         <OTSession
           apiKey={API_KEY}
           sessionId={sessionId}

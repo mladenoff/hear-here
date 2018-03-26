@@ -6,6 +6,7 @@ import session from './sessionReducer';
 import setlists from './setlistsReducer';
 import ui from './uiReducer';
 import search from './searchReducer';
+import streams from './streamReducer';
 
 export default combineReducers({
   bands,
@@ -13,5 +14,6 @@ export default combineReducers({
   setlists,
   songs,
   ui,
-  search
+  search,
+  streams,
 });
