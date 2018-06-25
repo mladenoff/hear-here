@@ -1,25 +1,10 @@
-# reactathon-name-tba
+# Hear-Here
+> For when you can't be _here_, but you still want to _hear_
 
-## State shape
-state: {
-  setlists: {
-    (setlistId) :{
-      id:
-      bandId:
-     songIds: []
-    }
-  }
-  songs: {
-    (songId): {
-      id:
-      title:
-      bandId:
-    }
-  }
-  bands: {
-    (bandId): {
-      id:
-      name:
-    }
-  }
-}
+---
+
+## Technologies Used
+* React.js
+* Redux
+* Hasura
+* OpenTok Tokbox API
